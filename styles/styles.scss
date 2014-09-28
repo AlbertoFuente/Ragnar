@@ -14,6 +14,8 @@ $basicButtonBorderType: map-get($basicButton, borderType);
 $basicButtonBorderRadius: map-get($basicButton, borderRadius);
 $basicButtonTextColor: map-get($basicButton, textColor);
 $basicButtonTextSize: map-get($basicButton, textSize);
+$basicButtonPaddingBig: "10px 15px 10px 15px";
+$basicButtonPaddingNormal: "5px 10px 5px 10px";
 
 @mixin basic-button-border-radius($radius) {
   -webkit-border-radius: $radius;
@@ -22,11 +24,15 @@ $basicButtonTextSize: map-get($basicButton, textSize);
   border-radius: $radius;
 }
 
-
-#basicButton-1 {
+.basicButton {
   background-color: $basicButtonBackground;
   border: $basicButtonBorderSize $basicButtonBorderType $basicButtonBorderColor;
   color: $basicButtonTextColor;
   font-size: $basicButtonTextSize;
   @include basic-button-border-radius($basicButtonBorderRadius);
+}
+.basicButtonBig {
+  width: 100px;
+  padding: 10px 20px;
+  text-align: center;
 }
