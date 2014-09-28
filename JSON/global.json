@@ -8,5 +8,23 @@
         "borderRadius": "4px",
         "textColor": "rgb(0,153,1255)",
         "textSize": "14px"
+    },
+    "basicButtonHover": {
+        "backgroundColor": "rgb(247,247,247)",
+        "borderColor": "rgb(0,153,1255)",
+        "borderSize": "1px",
+        "borderType": "solid",
+        "borderRadius": "4px",
+        "textColor": "rgb(0,153,1255)",
+        "textSize": "14px"
+    },
+    "basicButtonActive": {
+        "backgroundColor": "rgb(0,153,1255)",
+        "borderColor": "rgb(0,153,1255)",
+        "borderSize": "1px",
+        "borderType": "solid",
+        "borderRadius": "4px",
+        "textColor": "rgb(255,255,255)",
+        "textSize": "14px"
     }
 }
