@@ -1,0 +1,32 @@
+// IMPORT JSON FILE
+// FOR COMPILE USE COMMAND
+// NEED PLUGIN https://github.com/vigetlabs/sass-json-vars
+// sass styles/styles.scss -r sass-json-vars styles/styles.css
+
+@import "../JSON/global.json";
+
+// BASIC BUTTON VARS
+
+$basicButtonBackground: map-get($basicButton, backgroundColor);
+$basicButtonBorderColor: map-get($basicButton, borderColor);
+$basicButtonBorderSize: map-get($basicButton, borderSize);
+$basicButtonBorderType: map-get($basicButton, borderType);
+$basicButtonBorderRadius: map-get($basicButton, borderRadius);
+$basicButtonTextColor: map-get($basicButton, textColor);
+$basicButtonTextSize: map-get($basicButton, textSize);
+
+@mixin basic-button-border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+
+#basicButton-1 {
+  background-color: $basicButtonBackground;
+  border: $basicButtonBorderSize $basicButtonBorderType $basicButtonBorderColor;
+  color: $basicButtonTextColor;
+  font-size: $basicButtonTextSize;
+  @include basic-button-border-radius($basicButtonBorderRadius);
+}
