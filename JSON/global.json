@@ -1,0 +1,11 @@
+{
+    "basicButton": {
+        "backgroundColor": "rgb(255,255,255)",
+        "borderColor": "rgb(239,148,19)",
+        "borderSize": "1px",
+        "borderType": "solid",
+
+        "textColor": "rgb(239,148,19)",
+        "textSize": "12px"
+    }
+}
