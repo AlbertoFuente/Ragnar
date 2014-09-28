@@ -17,6 +17,26 @@ $basicButtonTextSize: map-get($basicButton, textSize);
 $basicButtonPaddingBig: "10px 15px 10px 15px";
 $basicButtonPaddingNormal: "5px 10px 5px 10px";
 
+// BASIC BUTTON Hover
+
+$basicButtonBackgroundHover: map-get($basicButtonHover, backgroundColor);
+$basicButtonBorderColorHover: map-get($basicButtonHover, borderColor);
+$basicButtonBorderSizeHover: map-get($basicButtonHover, borderSize);
+$basicButtonBorderTypeHover: map-get($basicButtonHover, borderType);
+$basicButtonBorderRadiusHover: map-get($basicButtonHover, borderRadius);
+$basicButtonTextColorHover: map-get($basicButtonHover, textColor);
+$basicButtonTextSizeHover: map-get($basicButtonHover, textSize);
+
+// BASIC BUTTON Active
+
+$basicButtonBackgroundActive: map-get($basicButtonActive, backgroundColor);
+$basicButtonBorderColorActive: map-get($basicButtonActive, borderColor);
+$basicButtonBorderSizeActive: map-get($basicButtonActive, borderSize);
+$basicButtonBorderTypeActive: map-get($basicButtonActive, borderType);
+$basicButtonBorderRadiusActive: map-get($basicButtonActive, borderRadius);
+$basicButtonTextColorActive: map-get($basicButtonActive, textColor);
+$basicButtonTextSizeActive: map-get($basicButtonActive, textSize);
+
 @mixin basic-button-border-radius($radius) {
   -webkit-border-radius: $radius;
   -moz-border-radius: $radius;
@@ -29,7 +49,20 @@ $basicButtonPaddingNormal: "5px 10px 5px 10px";
   border: $basicButtonBorderSize $basicButtonBorderType $basicButtonBorderColor;
   color: $basicButtonTextColor;
   font-size: $basicButtonTextSize;
+  cursor: pointer;
   @include basic-button-border-radius($basicButtonBorderRadius);
+  &:hover {
+    background-color: $basicButtonBackgroundHover;
+    border: $basicButtonBorderSizeHover $basicButtonBorderTypeHover $basicButtonBorderColorHover;
+    color: $basicButtonTextColorHover;
+    font-size: $basicButtonTextSizeHover;
+  }
+  &:active {
+    background-color: $basicButtonBackgroundActive;
+    border: $basicButtonBorderSizeActive $basicButtonBorderTypeActive $basicButtonBorderColorActive;
+    color: $basicButtonTextColorActive;
+    font-size: $basicButtonTextSizeActive;
+  }
 }
 .basicButtonBig {
   width: 100px;
