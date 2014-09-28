@@ -24,12 +24,40 @@ function addButton(data) {
 
         this.buttonBox = document.createElement("div");
         this.buttonBox.id = thisHolder.buttonId;
-        this.buttonClass = thisHolder.buttonClass;
 
         this.buttonText = document.createTextNode(thisHolder.buttonText);
 
         this.buttonBox.appendChild(thisHolder.buttonText);
         this.parent.appendChild(thisHolder.buttonBox);
+    }
 
+    var url = "../JSON/global.json";
+    var dataVars = {};
+
+    var xhr = new XMLHttpRequest();
+        xhr.open('get', url, true);
+        xhr.responseType = 'json';
+
+        xhr.onload = function() {
+            var status = xhr.status;
+            if (status == 200) {
+                dataVars = xhr.response;
+                asignButtonClass();
+            } else {
+                console.log(status);
+            }
+        };
+        xhr.send();
+
+    function asignButtonClass() {
+        thisHolder.dataButton = dataVars.basicButton;
+
+        if (thisHolder.dataButton.buttonSize == "Big") {
+            thisHolder.buttonBox.className = thisHolder.buttonClass + " basicButtonBig";
+        } else if (thisHolder.dataButton.buttonSize == "Normal") {
+            thisHolder.buttonBox.className = thisHolder.buttonClass + " basicButtonNormal";
+        } else {
+            thisHolder.buttonBox.className = thisHolder.buttonClass + " basicButtonNormal";
+        }
     }
 }
