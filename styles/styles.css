@@ -24,4 +24,14 @@
   padding: 10px 20px;
   text-align: center; }
 
+.basicButtonNormal {
+  width: 80px;
+  padding: 10px 20px;
+  text-align: center; }
+
+.basicButtonSmall {
+  width: 60px;
+  padding: 10px 20px;
+  text-align: center; }
+
 /*# sourceMappingURL=styles.css.map */
