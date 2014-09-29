@@ -42,22 +42,17 @@ function addButton(data) {
             var status = xhr.status;
             if (status == 200) {
                 dataVars = xhr.response;
-                asignButtonClass();
             } else {
                 console.log(status);
             }
         };
         xhr.send();
 
-    function asignButtonClass() {
-        thisHolder.dataButton = dataVars.basicButton;
-
-        if (thisHolder.dataButton.buttonSize == "Big") {
-            thisHolder.buttonBox.className = thisHolder.buttonClass + " basicButtonBig";
-        } else if (thisHolder.dataButton.buttonSize == "Normal") {
-            thisHolder.buttonBox.className = thisHolder.buttonClass + " basicButtonNormal";
-        } else {
-            thisHolder.buttonBox.className = thisHolder.buttonClass + " basicButtonNormal";
-        }
+    if (data.buttonSize == "Big") {
+        thisHolder.buttonBox.className = thisHolder.buttonClass + " basicButtonBig";
+    } else if (data.buttonSize == "Normal") {
+        thisHolder.buttonBox.className = thisHolder.buttonClass + " basicButtonNormal";
+    } else {
+        thisHolder.buttonBox.className = thisHolder.buttonClass + " basicButtonSmall";
     }
 }
