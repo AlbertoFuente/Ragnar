@@ -1,0 +1,13 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.basicButton {
+    float: left;
+    margin-right: 20px;
+}
+
+.buttonsTextContainer {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
