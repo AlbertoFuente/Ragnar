@@ -52,6 +52,10 @@ var seriesButtonTitleText = document.createTextNode('Series Buttons Sample:');
 seriesButtonsTextContainer.appendChild(seriesButtonTitleText);
 document.body.appendChild(seriesButtonsTextContainer);
 
+/**
+ * Implementing series buttons
+ */
+
 var seriesButtonsObj = {};
 
 seriesButtonsObj.seriesLength = 4;
@@ -65,23 +69,23 @@ seriesButtonsObj.buttons.button3 = {};
 seriesButtonsObj.buttons.button4 = {};
 
 // First button
-seriesButtonsObj.buttons.button1.buttonId = "basicButton-1";
-seriesButtonsObj.buttons.button1.buttonClass = "basicButton";
+seriesButtonsObj.buttons.button1.buttonId = "seriesButton-1";
+seriesButtonsObj.buttons.button1.buttonClass = "seriesButton";
 seriesButtonsObj.buttons.button1.buttonText = "First";
 
 // Second button
-seriesButtonsObj.buttons.button2.buttonId = "basicButton-2";
-seriesButtonsObj.buttons.button2.buttonClass = "basicButton";
+seriesButtonsObj.buttons.button2.buttonId = "seriesButton-2";
+seriesButtonsObj.buttons.button2.buttonClass = "seriesButton";
 seriesButtonsObj.buttons.button2.buttonText = "Second";
 
 // First button
-seriesButtonsObj.buttons.button3.buttonId = "basicButton-3";
-seriesButtonsObj.buttons.button3.buttonClass = "basicButton";
+seriesButtonsObj.buttons.button3.buttonId = "seriesButton-3";
+seriesButtonsObj.buttons.button3.buttonClass = "seriesButton";
 seriesButtonsObj.buttons.button3.buttonText = "Third";
 
 // First button
-seriesButtonsObj.buttons.button4.buttonId = "basicButton-4";
-seriesButtonsObj.buttons.button4.buttonClass = "basicButton";
+seriesButtonsObj.buttons.button4.buttonId = "seriesButton-4";
+seriesButtonsObj.buttons.button4.buttonClass = "seriesButton";
 seriesButtonsObj.buttons.button4.buttonText = "Fourth";
 
 addSeriesButtons(seriesButtonsObj);
