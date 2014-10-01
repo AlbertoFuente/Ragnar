@@ -125,9 +125,79 @@ $seriesButtonsTextColorActive: map-get($seriesButtonsActive, textColor);
 $seriesButtonsTextSizeActive: map-get($seriesButtonsActive, textSize);
 $seriesButtonsInnerShadowColorActive: map-get($seriesButtonsActive, innerShadowColor);
 
-@mixin series-buttons-border-radius($radius) {
-  -webkit-border-radius: $radius;
-  -moz-border-radius: $radius;
-  -ms-border-radius: $radius;
-  border-radius: $radius;
+@mixin series-buttons-border-radius-first($radius) {
+  -webkit-border-top-left-radius: $radius;
+  -webkit-border-bottom-left-radius: $radius;
+  -moz-border-radius-topleft: $radius;
+  -moz-border-radius-bottomleft: $radius;
+  border-top-left-radius: $radius;
+  border-bottom-left-radius: $radius;
+}
+
+@mixin series-buttons-border-radius-last($radius) {
+  -webkit-border-top-right-radius: $radius;
+  -webkit-border-bottom-right-radius: $radius;
+  -moz-border-radius-topright: $radius;
+  -moz-border-radius-bottomright: $radius;
+  border-top-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+}
+
+.seriesButton {
+  float: left;
+  background-color: $seriesButtonsBackground;
+  border: $seriesButtonsBorderSize $seriesButtonsBorderType $seriesButtonsBorderColor;
+  border-right: none;
+  color: $seriesButtonsTextColor;
+  font-size: $seriesButtonsTextSize;
+  cursor: pointer;
+  -moz-box-shadow:    inset 0 0 10px $seriesButtonsInnerShadowColor;
+  -webkit-box-shadow: inset 0 0 10px $seriesButtonsInnerShadowColor;
+  box-shadow:         inset 0 0 10px $seriesButtonsInnerShadowColor;
+  &:hover {
+    background-color: $seriesButtonsBackgroundHover;
+    border: $seriesButtonsBorderSizeHover $seriesButtonsBorderTypeHover $seriesButtonsBorderColorHover;
+    border-right: none;
+    color: $seriesButtonsTextColorHover;
+    font-size: $seriesButtonsTextSizeHover;
+    -moz-box-shadow:    inset 0 0 10px $seriesButtonsInnerShadowColorHover;
+    -webkit-box-shadow: inset 0 0 10px $seriesButtonsInnerShadowColorHover;
+    box-shadow:         inset 0 0 10px $seriesButtonsInnerShadowColorHover;
+  }
+  &:active {
+    background-color: $seriesButtonsBackgroundActive;
+    border: $seriesButtonsBorderSizeActive $seriesButtonsBorderTypeActive $seriesButtonsBorderColorActive;
+    border-right: none;
+    color: $seriesButtonsTextColorActive;
+    font-size: $seriesButtonsTextSizeActive;
+    -moz-box-shadow:    inset 0 0 10px $seriesButtonsInnerShadowColorActive;
+    -webkit-box-shadow: inset 0 0 10px $seriesButtonsInnerShadowColorActive;
+    box-shadow:         inset 0 0 10px $seriesButtonsInnerShadowColorActive;
+  }
+}
+
+.seriesButtonContainer {
+  :nth-child(1) {
+    @include series-buttons-border-radius-first($seriesButtonsBorderRadius);
+  }
+  :last-child {
+    @include series-buttons-border-radius-last($seriesButtonsBorderRadius);
+    border-right: $seriesButtonsBorderSize $seriesButtonsBorderType $seriesButtonsBorderColor !important;
+  }
+}
+
+.seriesButtonsBig {
+  width: 100px;
+  padding: 10px 20px;
+  text-align: center;
+}
+.seriesButtonsNormal {
+  width: 80px;
+  padding: 10px 20px;
+  text-align: center;
+}
+.seriesButtonsSmall {
+  width: 60px;
+  padding: 10px 20px;
+  text-align: center;
 }
