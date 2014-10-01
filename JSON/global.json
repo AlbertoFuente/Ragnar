@@ -29,5 +29,36 @@
         "textColor": "rgb(255,255,255)",
         "textSize": "14px",
         "innerShadowColor": "#3769d9"
+    },
+    "seriesButtons": {
+        "buttonSize": "Big",
+        "backgroundColor": "rgb(255,255,255)",
+        "borderColor": "rgb(0,153,1255)",
+        "borderSize": "1px",
+        "borderType": "solid",
+        "borderRadius": "4px",
+        "textColor": "rgb(0,153,1255)",
+        "textSize": "14px",
+        "innerShadowColor": "none"
+    },
+    "seriesButtonsHover": {
+        "backgroundColor": "rgb(247,247,247)",
+        "borderColor": "rgb(0,153,1255)",
+        "borderSize": "1px",
+        "borderType": "solid",
+        "borderRadius": "4px",
+        "textColor": "rgb(0,153,1255)",
+        "textSize": "14px",
+        "innerShadowColor": "none"
+    },
+    "seriesButtonsActive": {
+        "backgroundColor": "rgb(0,153,1255)",
+        "borderColor": "rgb(0,153,1255)",
+        "borderSize": "1px",
+        "borderType": "solid",
+        "borderRadius": "4px",
+        "textColor": "rgb(255,255,255)",
+        "textSize": "14px",
+        "innerShadowColor": "#3769d9"
     }
 }
