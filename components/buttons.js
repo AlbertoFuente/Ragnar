@@ -2,7 +2,27 @@
  * Buttons components
  */
 
-function addButton(data) {
+function connectJSON() {
+    var url = "../JSON/global.json";
+    var dataVars = {};
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('get', url, true);
+    xhr.responseType = 'json';
+
+    xhr.onload = function() {
+        var status = xhr.status;
+        if (status == 200) {
+            dataVars = xhr.response;
+        } else {
+            console.log(status);
+        }
+    };
+    xhr.send();
+    return dataVars;
+}
+
+function addBasicButton(data) {
 
     var thisHolder = this;
 
@@ -31,28 +51,47 @@ function addButton(data) {
         this.parent.appendChild(thisHolder.buttonBox);
     }
 
-    var url = "../JSON/global.json";
-    var dataVars = {};
-
-    var xhr = new XMLHttpRequest();
-        xhr.open('get', url, true);
-        xhr.responseType = 'json';
-
-        xhr.onload = function() {
-            var status = xhr.status;
-            if (status == 200) {
-                dataVars = xhr.response;
-            } else {
-                console.log(status);
-            }
-        };
-        xhr.send();
-
     if (data.buttonSize == "Big") {
         thisHolder.buttonBox.className = thisHolder.buttonClass + " basicButtonBig";
     } else if (data.buttonSize == "Normal") {
         thisHolder.buttonBox.className = thisHolder.buttonClass + " basicButtonNormal";
     } else {
         thisHolder.buttonBox.className = thisHolder.buttonClass + " basicButtonSmall";
+    }
+}
+
+
+function addSeriesButtons(data) {
+    var thisHolder = this;
+
+    if (data != undefined) {
+
+        this.parent = data.parentElement;
+        this.seriesLength = data.seriesLength;
+        this.type = data.type;
+        this.buttonSize = data.buttonSize;
+        this.buttons = data.buttons;
+
+        for (var i in this.buttons) {
+            this.button = this.buttons[i];
+
+            this.divButton = document.createElement("div");
+            this.divButton.id = this.button.buttonId;
+            this.divButton.className = this.button.buttonClass;
+
+            this.textButton = document.createTextNode(this.button.buttonText);
+
+            if (data.buttonSize == "Big") {
+                thisHolder.divButton.className = thisHolder.button.buttonClass + " seriesButtonsBig";
+            } else if (data.buttonSize == "Normal") {
+                thisHolder.divButton.className = thisHolder.button.buttonClass + " seriesButtonNormal";
+            } else {
+                thisHolder.divButton.className = thisHolder.button.buttonClass + " seriesButtonSmall";
+            }
+
+            this.divButton.appendChild(this.textButton);
+            this.parent.appendChild(this.divButton);
+        }
+
     }
 }
