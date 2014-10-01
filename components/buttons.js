@@ -72,6 +72,9 @@ function addSeriesButtons(data) {
         this.buttonSize = data.buttonSize;
         this.buttons = data.buttons;
 
+        this.buttonsContainer = document.createElement("div");
+        this.buttonsContainer.className = "seriesButtonContainer";
+
         for (var i in this.buttons) {
             this.button = this.buttons[i];
 
@@ -90,7 +93,8 @@ function addSeriesButtons(data) {
             }
 
             this.divButton.appendChild(this.textButton);
-            this.parent.appendChild(this.divButton);
+            this.buttonsContainer.appendChild(this.divButton);
+            this.parent.appendChild(this.buttonsContainer);
         }
 
     }
