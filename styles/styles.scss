@@ -91,3 +91,43 @@ $basicButtonInnerShadowActive: map-get($basicButtonActive, innerShadowColor);
   padding: 10px 20px;
   text-align: center;
 }
+
+// SERIES BUTTONS VARS
+
+$seriesButtonsBackground: map-get($seriesButtons, backgroundColor);
+$seriesButtonsBorderColor: map-get($seriesButtons, borderColor);
+$seriesButtonsBorderSize: map-get($seriesButtons, borderSize);
+$seriesButtonsBorderType: map-get($seriesButtons, borderType);
+$seriesButtonsBorderRadius: map-get($seriesButtons, borderRadius);
+$seriesButtonsTextColor: map-get($seriesButtons, textColor);
+$seriesButtonsTextSize: map-get($seriesButtons, textSize);
+$seriesButtonsInnerShadowColor: map-get($seriesButtons, innerShadowColor);
+
+// SERIES BUTTONS Hover
+
+$seriesButtonsBackgroundHover: map-get($seriesButtonsHover, backgroundColor);
+$seriesButtonsBorderColorHover: map-get($seriesButtonsHover, borderColor);
+$seriesButtonsBorderSizeHover: map-get($seriesButtonsHover, borderSize);
+$seriesButtonsBorderTypeHover: map-get($seriesButtonsHover, borderType);
+$seriesButtonsBorderRadiusHover: map-get($seriesButtonsHover, borderRadius);
+$seriesButtonsTextColorHover: map-get($seriesButtonsHover, textColor);
+$seriesButtonsTextSizeHover: map-get($seriesButtonsHover, textSize);
+$seriesButtonsInnerShadowColorHover: map-get($seriesButtonsHover, innerShadowColor);
+
+// SERIES BUTTONS Active
+
+$seriesButtonsBackgroundActive: map-get($seriesButtonsActive, backgroundColor);
+$seriesButtonsBorderColorActive: map-get($seriesButtonsActive, borderColor);
+$seriesButtonsBorderSizeActive: map-get($seriesButtonsActive, borderSize);
+$seriesButtonsBorderTypeActive: map-get($seriesButtonsActive, borderType);
+$seriesButtonsBorderRadiusActive: map-get($seriesButtonsActive, borderRadius);
+$seriesButtonsTextColorActive: map-get($seriesButtonsActive, textColor);
+$seriesButtonsTextSizeActive: map-get($seriesButtonsActive, textSize);
+$seriesButtonsInnerShadowColorActive: map-get($seriesButtonsActive, innerShadowColor);
+
+@mixin series-buttons-border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
