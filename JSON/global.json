@@ -7,7 +7,8 @@
         "borderType": "solid",
         "borderRadius": "4px",
         "textColor": "rgb(0,153,1255)",
-        "textSize": "14px"
+        "textSize": "14px",
+        "innerShadowColor": "none"
     },
     "basicButtonHover": {
         "backgroundColor": "rgb(247,247,247)",
@@ -16,7 +17,8 @@
         "borderType": "solid",
         "borderRadius": "4px",
         "textColor": "rgb(0,153,1255)",
-        "textSize": "14px"
+        "textSize": "14px",
+        "innerShadowColor": "none"
     },
     "basicButtonActive": {
         "backgroundColor": "rgb(0,153,1255)",
@@ -25,6 +27,7 @@
         "borderType": "solid",
         "borderRadius": "4px",
         "textColor": "rgb(255,255,255)",
-        "textSize": "14px"
+        "textSize": "14px",
+        "innerShadowColor": "#3769d9"
     }
 }

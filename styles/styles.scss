@@ -14,6 +14,7 @@ $basicButtonBorderType: map-get($basicButton, borderType);
 $basicButtonBorderRadius: map-get($basicButton, borderRadius);
 $basicButtonTextColor: map-get($basicButton, textColor);
 $basicButtonTextSize: map-get($basicButton, textSize);
+$basicButtonInnerShadow: map-get($basicButton, innerShadowColor);
 $basicButtonPaddingBig: "10px 15px 10px 15px";
 $basicButtonPaddingNormal: "5px 10px 5px 10px";
 
@@ -26,6 +27,7 @@ $basicButtonBorderTypeHover: map-get($basicButtonHover, borderType);
 $basicButtonBorderRadiusHover: map-get($basicButtonHover, borderRadius);
 $basicButtonTextColorHover: map-get($basicButtonHover, textColor);
 $basicButtonTextSizeHover: map-get($basicButtonHover, textSize);
+$basicButtonInnerShadowHover: map-get($basicButtonHover, innerShadowColor);
 
 // BASIC BUTTON Active
 
@@ -36,6 +38,7 @@ $basicButtonBorderTypeActive: map-get($basicButtonActive, borderType);
 $basicButtonBorderRadiusActive: map-get($basicButtonActive, borderRadius);
 $basicButtonTextColorActive: map-get($basicButtonActive, textColor);
 $basicButtonTextSizeActive: map-get($basicButtonActive, textSize);
+$basicButtonInnerShadowActive: map-get($basicButtonActive, innerShadowColor);
 
 @mixin basic-button-border-radius($radius) {
   -webkit-border-radius: $radius;
@@ -50,18 +53,27 @@ $basicButtonTextSizeActive: map-get($basicButtonActive, textSize);
   color: $basicButtonTextColor;
   font-size: $basicButtonTextSize;
   cursor: pointer;
+  -moz-box-shadow:    inset 0 0 10px $basicButtonInnerShadow;
+  -webkit-box-shadow: inset 0 0 10px $basicButtonInnerShadow;
+  box-shadow:         inset 0 0 10px $basicButtonInnerShadow;
   @include basic-button-border-radius($basicButtonBorderRadius);
   &:hover {
     background-color: $basicButtonBackgroundHover;
     border: $basicButtonBorderSizeHover $basicButtonBorderTypeHover $basicButtonBorderColorHover;
     color: $basicButtonTextColorHover;
     font-size: $basicButtonTextSizeHover;
+    -moz-box-shadow:    inset 0 0 10px $basicButtonInnerShadowHover;
+    -webkit-box-shadow: inset 0 0 10px $basicButtonInnerShadowHover;
+    box-shadow:         inset 0 0 10px $basicButtonInnerShadowHover;
   }
   &:active {
     background-color: $basicButtonBackgroundActive;
     border: $basicButtonBorderSizeActive $basicButtonBorderTypeActive $basicButtonBorderColorActive;
     color: $basicButtonTextColorActive;
     font-size: $basicButtonTextSizeActive;
+    -moz-box-shadow:    inset 0 0 10px $basicButtonInnerShadowActive;
+    -webkit-box-shadow: inset 0 0 10px $basicButtonInnerShadowActive;
+    box-shadow:         inset 0 0 10px $basicButtonInnerShadowActive;
   }
 }
 .basicButtonBig {

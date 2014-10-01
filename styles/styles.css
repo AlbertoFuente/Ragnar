@@ -4,6 +4,9 @@
   color: #0099ff;
   font-size: 14px;
   cursor: pointer;
+  -moz-box-shadow: inset 0 0 10px none;
+  -webkit-box-shadow: inset 0 0 10px none;
+  box-shadow: inset 0 0 10px none;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -12,12 +15,18 @@
     background-color: #f7f7f7;
     border: 1px solid #0099ff;
     color: #0099ff;
-    font-size: 14px; }
+    font-size: 14px;
+    -moz-box-shadow: inset 0 0 10px none;
+    -webkit-box-shadow: inset 0 0 10px none;
+    box-shadow: inset 0 0 10px none; }
   .basicButton:active {
     background-color: #0099ff;
     border: 1px solid #0099ff;
     color: white;
-    font-size: 14px; }
+    font-size: 14px;
+    -moz-box-shadow: inset 0 0 10px #3769d9;
+    -webkit-box-shadow: inset 0 0 10px #3769d9;
+    box-shadow: inset 0 0 10px #3769d9; }
 
 .basicButtonBig {
   width: 100px;
