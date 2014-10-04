@@ -21,6 +21,8 @@ basicButtonObj.buttonSize = "Big";
 basicButtonObj.buttonId = "basicButton-1";
 basicButtonObj.buttonClass = "basicButton";
 basicButtonObj.buttonText = "Basic";
+basicButtonObj.icon = true;
+basicButtonObj.iconClass = "fa fa-bars";
 var basicButtonBig = addBasicButton(basicButtonObj);
 
 // normal button
@@ -30,6 +32,8 @@ basicButtonObj.buttonSize = "Normal";
 basicButtonObj.buttonId = "basicButton-2";
 basicButtonObj.buttonClass = "basicButton";
 basicButtonObj.buttonText = "Basic";
+basicButtonObj.icon = true;
+basicButtonObj.iconClass = "fa fa-book";
 var basicButtonNormal = addBasicButton(basicButtonObj);
 
 // small button
@@ -39,6 +43,8 @@ basicButtonObj.buttonSize = "Small";
 basicButtonObj.buttonId = "basicButton-3";
 basicButtonObj.buttonClass = "basicButton";
 basicButtonObj.buttonText = "Basic";
+basicButtonObj.icon = true;
+basicButtonObj.iconClass = "fa fa-cogs";
 var basicButtonSmall = addBasicButton(basicButtonObj);
 
 
@@ -72,20 +78,28 @@ seriesButtonsObj.buttons.button4 = {};
 seriesButtonsObj.buttons.button1.buttonId = "seriesButton-1";
 seriesButtonsObj.buttons.button1.buttonClass = "seriesButton";
 seriesButtonsObj.buttons.button1.buttonText = "First";
+seriesButtonsObj.buttons.button1.icon = false;
+seriesButtonsObj.buttons.button1.iconClass = "";
 
 // Second button
 seriesButtonsObj.buttons.button2.buttonId = "seriesButton-2";
 seriesButtonsObj.buttons.button2.buttonClass = "seriesButton";
 seriesButtonsObj.buttons.button2.buttonText = "Second";
+seriesButtonsObj.buttons.button2.icon = false;
+seriesButtonsObj.buttons.button2.iconClass = "";
 
 // First button
 seriesButtonsObj.buttons.button3.buttonId = "seriesButton-3";
 seriesButtonsObj.buttons.button3.buttonClass = "seriesButton";
 seriesButtonsObj.buttons.button3.buttonText = "Third";
+seriesButtonsObj.buttons.button3.icon = false;
+seriesButtonsObj.buttons.button3.iconClass = "";
 
 // First button
 seriesButtonsObj.buttons.button4.buttonId = "seriesButton-4";
 seriesButtonsObj.buttons.button4.buttonClass = "seriesButton";
 seriesButtonsObj.buttons.button4.buttonText = "Fourth";
+seriesButtonsObj.buttons.button4.icon = false;
+seriesButtonsObj.buttons.button4.iconClass = "";
 
 addSeriesButtons(seriesButtonsObj);
