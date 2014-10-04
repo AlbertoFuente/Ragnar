@@ -4,27 +4,30 @@
 
 function connectJSON() {
     var url = "../JSON/global.json";
-    var dataVars = {};
+    var data = {};
 
-    var xhr = new XMLHttpRequest();
-    xhr.open('get', url, true);
-    xhr.responseType = 'json';
+    $.ajax({
+        type:"GET",
+        dataType: "json",
+        url: url,
+        success:function (result) {
 
-    xhr.onload = function() {
-        var status = xhr.status;
-        if (status == 200) {
-            dataVars = xhr.response;
-        } else {
-            console.log(status);
-        }
-    };
-    xhr.send();
-    return dataVars;
+            if(result!=undefined){
+
+                data = result;
+            }
+        },
+        async: false
+    });
+    return data;
 }
 
 function addBasicButton(data) {
 
     var thisHolder = this;
+
+    var jsonData = connectJSON();
+    console.log(jsonData);
 
     if (data != undefined) {
 
@@ -41,14 +44,30 @@ function addBasicButton(data) {
         this.borderType = data.borderType;
         this.textColor = data.textColor;
         this.textSize = data.textSize;
+        this.icon = data.icon;
+        this.iconClass = data.iconClass;
 
-        this.buttonBox = document.createElement("div");
-        this.buttonBox.id = thisHolder.buttonId;
+        if (this.icon = true) {
+            this.buttonBox = document.createElement("div");
+            this.buttonBox.id = thisHolder.buttonId;
 
-        this.buttonText = document.createTextNode(thisHolder.buttonText);
+            this.iconCont = document.createElement('li');
+            this.iconCont.className = this.iconClass + " iconBasicButton";
 
-        this.buttonBox.appendChild(thisHolder.buttonText);
-        this.parent.appendChild(thisHolder.buttonBox);
+            this.buttonText = document.createTextNode(thisHolder.buttonText);
+
+            this.buttonBox.appendChild(thisHolder.iconCont);
+            this.buttonBox.appendChild(thisHolder.buttonText);
+            this.parent.appendChild(thisHolder.buttonBox);
+        } else {
+            this.buttonBox = document.createElement("div");
+            this.buttonBox.id = thisHolder.buttonId;
+
+            this.buttonText = document.createTextNode(thisHolder.buttonText);
+
+            this.buttonBox.appendChild(thisHolder.buttonText);
+            this.parent.appendChild(thisHolder.buttonBox);
+        }
     }
 
     if (data.buttonSize == "Big") {
@@ -81,20 +100,41 @@ function addSeriesButtons(data) {
             this.divButton = document.createElement("div");
             this.divButton.id = this.button.buttonId;
             this.divButton.className = this.button.buttonClass;
+            this.divButton.icon = this.button.icon;
+            this.divButton.iconClass = this.button.iconClass;
 
-            this.textButton = document.createTextNode(this.button.buttonText);
+            if (this.divButton.icon == true) {
+                this.icon = document.createElement('i');
+                this.icon.className = this.divButton.iconClass;
+                this.textButton = document.createTextNode(this.button.buttonText);
 
-            if (data.buttonSize == "Big") {
-                thisHolder.divButton.className = thisHolder.button.buttonClass + " seriesButtonsBig";
-            } else if (data.buttonSize == "Normal") {
-                thisHolder.divButton.className = thisHolder.button.buttonClass + " seriesButtonNormal";
+                if (data.buttonSize == "Big") {
+                    thisHolder.divButton.className = thisHolder.button.buttonClass + " seriesButtonsBig";
+                } else if (data.buttonSize == "Normal") {
+                    thisHolder.divButton.className = thisHolder.button.buttonClass + " seriesButtonNormal";
+                } else {
+                    thisHolder.divButton.className = thisHolder.button.buttonClass + " seriesButtonSmall";
+                }
+                this.divButton.appendChild(this.icon);
+                this.divButton.appendChild(this.textButton);
+                this.buttonsContainer.appendChild(this.divButton);
+                this.parent.appendChild(this.buttonsContainer);
             } else {
-                thisHolder.divButton.className = thisHolder.button.buttonClass + " seriesButtonSmall";
+                this.textButton = document.createTextNode(this.button.buttonText);
+
+                if (data.buttonSize == "Big") {
+                    thisHolder.divButton.className = thisHolder.button.buttonClass + " seriesButtonsBig";
+                } else if (data.buttonSize == "Normal") {
+                    thisHolder.divButton.className = thisHolder.button.buttonClass + " seriesButtonNormal";
+                } else {
+                    thisHolder.divButton.className = thisHolder.button.buttonClass + " seriesButtonSmall";
+                }
+
+                this.divButton.appendChild(this.textButton);
+                this.buttonsContainer.appendChild(this.divButton);
+                this.parent.appendChild(this.buttonsContainer);
             }
 
-            this.divButton.appendChild(this.textButton);
-            this.buttonsContainer.appendChild(this.divButton);
-            this.parent.appendChild(this.buttonsContainer);
         }
 
     }
