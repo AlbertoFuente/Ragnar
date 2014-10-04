@@ -75,6 +75,10 @@ $basicButtonInnerShadowActive: map-get($basicButtonActive, innerShadowColor);
     -webkit-box-shadow: inset 0 0 10px $basicButtonInnerShadowActive;
     box-shadow:         inset 0 0 10px $basicButtonInnerShadowActive;
   }
+  .iconBasicButton {
+    margin-right: 10px;
+    text-align: left;
+  }
 }
 .basicButtonBig {
   width: 100px;
