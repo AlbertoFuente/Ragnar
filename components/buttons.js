@@ -27,7 +27,6 @@ function addBasicButton(data) {
     var thisHolder = this;
 
     var jsonData = connectJSON();
-    console.log(jsonData);
 
     if (data != undefined) {
 
@@ -42,6 +41,7 @@ function addBasicButton(data) {
         this.borderColor = jsonData.basicButton.borderColor;
         this.borderSize = jsonData.basicButton.borderSize;
         this.borderType = jsonData.basicButton.borderType;
+        this.borderRadius = jsonData.basicButton.borderRadius;
         this.textColor = jsonData.basicButton.textColor;
         this.textSize = jsonData.basicButton.textSize;
         this.icon = data.icon;
@@ -77,7 +77,6 @@ function addBasicButton(data) {
 
             setTimeout(function() {
                 thisHolder.parentPosition = thisHolder.buttonBox.getBoundingClientRect();
-                console.log(thisHolder.parentPosition);
                 thisHolder.parentPositionLeft = thisHolder.parentPosition.left;
                 thisHolder.parentPositionTop = thisHolder.parentPosition.top;
                 thisHolder.parentPositionWidth = thisHolder.parentPosition.width;
@@ -92,6 +91,7 @@ function addBasicButton(data) {
                 thisHolder.dropDownContainer.style.height = "auto";
                 thisHolder.dropDownContainer.style.background = thisHolder.backgroundColor;
                 thisHolder.dropDownContainer.style.border = thisHolder.borderSize + " " + thisHolder.borderType + " " + thisHolder.borderColor;
+                thisHolder.dropDownContainer.style.borderRadius = thisHolder.borderRadius;
             }, 100);
 
             for (var opt in this.dropDownElements) {
@@ -104,6 +104,10 @@ function addBasicButton(data) {
                 this.createOption.appendChild(this.createOptionLabel);
                 this.dropDownContainer.appendChild(this.createOption);
                 this.parent.appendChild(this.dropDownContainer);
+
+                this.createOption.onclick = function() {
+                    thisHolder.dropDownContainer.style.display = "none";
+                }
             }
         }
 
