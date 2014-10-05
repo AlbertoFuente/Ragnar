@@ -23,6 +23,8 @@ basicButtonObj.buttonClass = "basicButton";
 basicButtonObj.buttonText = "Basic";
 basicButtonObj.icon = true;
 basicButtonObj.iconClass = "fa fa-bars";
+basicButtonObj.dropDown = false;
+basicButtonObj.dropDownElements = {};
 var basicButtonBig = addBasicButton(basicButtonObj);
 
 // normal button
@@ -34,6 +36,8 @@ basicButtonObj.buttonClass = "basicButton";
 basicButtonObj.buttonText = "Basic";
 basicButtonObj.icon = true;
 basicButtonObj.iconClass = "fa fa-book";
+basicButtonObj.dropDown = false;
+basicButtonObj.dropDownElements = {};
 var basicButtonNormal = addBasicButton(basicButtonObj);
 
 // small button
@@ -45,6 +49,12 @@ basicButtonObj.buttonClass = "basicButton";
 basicButtonObj.buttonText = "Basic";
 basicButtonObj.icon = true;
 basicButtonObj.iconClass = "fa fa-cogs";
+basicButtonObj.dropDown = true;
+basicButtonObj.dropDownElements = {};
+basicButtonObj.dropDownElements.element1 = "Option1";
+basicButtonObj.dropDownElements.element2 = "Option2";
+basicButtonObj.dropDownElements.element3 = "Option3";
+basicButtonObj.dropDownElements.element4 = "Option4";
 var basicButtonSmall = addBasicButton(basicButtonObj);
 
 
