@@ -38,16 +38,18 @@ function addBasicButton(data) {
         this.buttonText = data.buttonText;
 
         // Styles
-        this.backgroundColor = data.backgroundColor;
-        this.borderColor = data.borderColor;
-        this.borderSize = data.borderSize;
-        this.borderType = data.borderType;
-        this.textColor = data.textColor;
-        this.textSize = data.textSize;
+        this.backgroundColor = jsonData.basicButton.backgroundColor;
+        this.borderColor = jsonData.basicButton.borderColor;
+        this.borderSize = jsonData.basicButton.borderSize;
+        this.borderType = jsonData.basicButton.borderType;
+        this.textColor = jsonData.basicButton.textColor;
+        this.textSize = jsonData.basicButton.textSize;
         this.icon = data.icon;
         this.iconClass = data.iconClass;
+        this.dropDown = data.dropDown;
+        this.dropDownElements = data.dropDownElements;
 
-        if (this.icon = true) {
+        if (this.icon == true) {
             this.buttonBox = document.createElement("div");
             this.buttonBox.id = thisHolder.buttonId;
 
@@ -68,6 +70,50 @@ function addBasicButton(data) {
             this.buttonBox.appendChild(thisHolder.buttonText);
             this.parent.appendChild(thisHolder.buttonBox);
         }
+
+        if (this.dropDown == true) {
+            this.dropDownContainer = document.createElement('div');
+            this.dropDownContainer.className= "dropDownContainer";
+
+            setTimeout(function() {
+                thisHolder.parentPosition = thisHolder.buttonBox.getBoundingClientRect();
+                console.log(thisHolder.parentPosition);
+                thisHolder.parentPositionLeft = thisHolder.parentPosition.left;
+                thisHolder.parentPositionTop = thisHolder.parentPosition.top;
+                thisHolder.parentPositionWidth = thisHolder.parentPosition.width;
+                thisHolder.parentPositionHeight = thisHolder.parentPosition.height;
+
+                thisHolder.dropDownContainer.style.position = "absolute";
+                thisHolder.dropDownContainer.style.display = "none";
+                thisHolder.dropDownContainer.style.left = thisHolder.parentPositionLeft + "px";
+                thisHolder.dropDownContainer.style.top = (thisHolder.parentPositionTop + thisHolder.parentPositionHeight + 3) + "px";
+                thisHolder.dropDownContainer.style.minWidth = thisHolder.parentPositionWidth + "px";
+                thisHolder.dropDownContainer.style.width = "auto";
+                thisHolder.dropDownContainer.style.height = "auto";
+                thisHolder.dropDownContainer.style.background = thisHolder.backgroundColor;
+                thisHolder.dropDownContainer.style.border = thisHolder.borderSize + " " + thisHolder.borderType + " " + thisHolder.borderColor;
+            }, 100);
+
+            for (var opt in this.dropDownElements) {
+                this.options = this.dropDownElements[opt];
+
+                this.createOption = document.createElement('div');
+                this.createOption.className = "dropDownOption";
+
+                this.createOptionLabel = document.createTextNode(this.options);
+                this.createOption.appendChild(this.createOptionLabel);
+                this.dropDownContainer.appendChild(this.createOption);
+                this.parent.appendChild(this.dropDownContainer);
+            }
+        }
+
+        this.buttonBox.onclick = function() {
+            if (thisHolder.dropDownContainer.style.display == "none") {
+                thisHolder.dropDownContainer.style.display = "block";
+            } else {
+                thisHolder.dropDownContainer.style.display = "none";
+            }
+        };
     }
 
     if (data.buttonSize == "Big") {
