@@ -107,6 +107,12 @@ function addBasicButton(data) {
 
                 this.createOption.onclick = function () {
                     thisHolder.dropDownContainer.style.display = "none";
+
+                    thisHolder.buttonBox.style.color = jsonData.basicButton.textColor;
+                    thisHolder.buttonBox.style.background = jsonData.basicButton.backgroundColor;
+                    thisHolder.buttonBox.style.mozBoxShadow = jsonData.basicButton.innerShadowColor;
+                    thisHolder.buttonBox.style.webkitBoxShadow = jsonData.basicButton.innerShadowColor;
+                    thisHolder.buttonBox.style.boxShadow = jsonData.basicButton.innerShadowColor;
                 }
             }
         }
@@ -118,8 +124,18 @@ function addBasicButton(data) {
         if (next.className == "dropDownContainer") {
             if (thisHolder.dropDownContainer.style.display == "none") {
                 thisHolder.dropDownContainer.style.display = "block";
+                this.style.color = jsonData.basicButtonActive.textColor;
+                this.style.background = jsonData.basicButtonActive.backgroundColor;
+                this.style.mozBoxShadow = "inset 0 0 10px " + jsonData.basicButtonActive.innerShadowColor;
+                this.style.webkitBoxShadow = "inset 0 0 10px " + jsonData.basicButtonActive.innerShadowColor;
+                this.style.boxShadow = "inset 0 0 10px " + jsonData.basicButtonActive.innerShadowColor;
             } else {
                 thisHolder.dropDownContainer.style.display = "none";
+                this.style.color = jsonData.basicButton.textColor;
+                this.style.background = jsonData.basicButton.backgroundColor;
+                this.style.mozBoxShadow = jsonData.basicButton.innerShadowColor;
+                this.style.webkitBoxShadow = jsonData.basicButton.innerShadowColor;
+                this.style.boxShadow = jsonData.basicButton.innerShadowColor;
             }
         }
     };
@@ -137,13 +153,24 @@ function addBasicButton(data) {
 function addSeriesButtons(data) {
     var thisHolder = this;
 
+    var jsonData = connectJSON();
+
     if (data != undefined) {
 
-        this.parent = data.parentElement;
+        this.parentS = data.parentElement;
         this.seriesLength = data.seriesLength;
         this.type = data.type;
         this.buttonSize = data.buttonSize;
         this.buttons = data.buttons;
+
+        this.backgroundColor = jsonData.seriesButtons.backgroundColor;
+        this.borderColor = jsonData.seriesButtons.borderColor;
+        this.borderSize = jsonData.seriesButtons.borderSize;
+        this.borderType = jsonData.seriesButtons.borderType;
+        this.borderRadius = jsonData.seriesButtons.borderRadius;
+        this.textColor = jsonData.seriesButtons.textColor;
+        this.textSize = jsonData.seriesButtons.textSize;
+        //this.innerShadow = jsonData.seriesButtons.innerShadowColor;
 
         this.buttonsContainer = document.createElement("div");
         this.buttonsContainer.className = "seriesButtonContainer";
@@ -156,10 +183,12 @@ function addSeriesButtons(data) {
             this.divButton.className = this.button.buttonClass;
             this.divButton.icon = this.button.icon;
             this.divButton.iconClass = this.button.iconClass;
+            this.divButton.dropDown = this.button.dropDown;
 
             if (this.divButton.icon == true) {
                 this.icon = document.createElement('i');
                 this.icon.className = this.divButton.iconClass;
+                this.icon.setAttribute('style', 'border-right: none !important; margin-right: 10px');
                 this.textButton = document.createTextNode(this.button.buttonText);
 
                 if (data.buttonSize == "Big") {
@@ -189,7 +218,73 @@ function addSeriesButtons(data) {
                 this.parent.appendChild(this.buttonsContainer);
             }
 
-        }
+            if (this.divButton.dropDown == true) {
 
+                this.dropDownContainerSeries = document.createElement('div');
+                this.dropDownContainerSeries.className = "dropDownContainerSeriesButtons";
+
+                setTimeout(function () {
+                    thisHolder.parentPositionS = thisHolder.divButton.getBoundingClientRect();
+                    thisHolder.parentPositionLeftS = thisHolder.parentPositionS.left;
+                    thisHolder.parentPositionTopS = thisHolder.parentPositionS.top;
+                    thisHolder.parentPositionWidthS = thisHolder.parentPositionS.width;
+                    thisHolder.parentPositionHeightS = thisHolder.parentPositionS.height;
+
+                    thisHolder.dropDownContainerSeries.style.position = "absolute";
+                    thisHolder.dropDownContainerSeries.style.display = "none";
+                    thisHolder.dropDownContainerSeries.style.left = thisHolder.parentPositionLeftS + "px";
+                    thisHolder.dropDownContainerSeries.style.top = (thisHolder.parentPositionTopS + thisHolder.parentPositionHeight + 3) + "px";
+                    thisHolder.dropDownContainerSeries.style.minWidth = thisHolder.parentPositionWidthS + "px";
+                    thisHolder.dropDownContainerSeries.style.width = "auto";
+                    thisHolder.dropDownContainerSeries.style.height = "auto";
+                    thisHolder.dropDownContainerSeries.style.background = thisHolder.backgroundColorS;
+                    thisHolder.dropDownContainerSeries.style.border = thisHolder.borderSize + " " + thisHolder.borderType + " " + thisHolder.borderColor;
+                    thisHolder.dropDownContainerSeries.style.borderRadius = thisHolder.borderRadius;
+                }, 100);
+
+                for (var opt in this.divButton.dropDown) {
+                    this.dropOptions = this.divButton.dropDown[opt];
+
+                    this.createOptionS = document.createElement('div');
+                    this.createOptionS.className = "dropDownOptionSeriesButtons";
+
+                    this.createOptionLabelS = document.createTextNode(this.dropOptions);
+                    this.createOptionS.appendChild(this.createOptionLabelS);
+                    this.dropDownContainerSeries.appendChild(this.createOptionS);
+                    this.parentS.appendChild(this.dropDownContainerSeries);
+
+                    this.createOptionS.onclick = function () {
+                        thisHolder.dropDownContainerSeries.style.display = "none";
+
+                        thisHolder.divButton.style.color = jsonData.seriesButtons.textColor;
+                        thisHolder.divButton.style.background = jsonData.seriesButtons.backgroundColor;
+                        thisHolder.divButton.style.mozBoxShadow = jsonData.seriesButtons.innerShadowColor;
+                        thisHolder.divButton.style.webkitBoxShadow = jsonData.seriesButtons.innerShadowColor;
+                        thisHolder.divButton.style.boxShadow = jsonData.seriesButtons.innerShadowColor;
+                    }
+                }
+            }
+        }
+        this.divButton.onclick = function() {
+            var next = this.nextSibling;
+
+            if (next.className == "dropDownContainerSeriesButtons") {
+                if (thisHolder.dropDownContainerSeries.style.display == "none") {
+                    thisHolder.dropDownContainerSeries.style.display = "block";
+                    this.style.color = jsonData.seriesButtonsActive.textColor;
+                    this.style.background = jsonData.seriesButtonsActive.backgroundColor;
+                    this.style.mozBoxShadow = "inset 0 0 10px " + jsonData.seriesButtonsActive.innerShadowColor;
+                    this.style.webkitBoxShadow = "inset 0 0 10px " + jsonData.seriesButtonsActive.innerShadowColor;
+                    this.style.boxShadow = "inset 0 0 10px " + jsonData.seriesButtonsActive.innerShadowColor;
+                } else {
+                    thisHolder.dropDownContainerSeries.style.display = "none";
+                    this.style.color = jsonData.seriesButtons.textColor;
+                    this.style.background = jsonData.seriesButtons.backgroundColor;
+                    this.style.mozBoxShadow = jsonData.seriesButtons.innerShadowColor;
+                    this.style.webkitBoxShadow = jsonData.seriesButtons.innerShadowColor;
+                    this.style.boxShadow = jsonData.seriesButtons.innerShadowColor;
+                }
+            }
+        };
     }
 }
