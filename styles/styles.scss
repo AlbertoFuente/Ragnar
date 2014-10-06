@@ -101,6 +101,7 @@ $basicButtonInnerShadowActive: map-get($basicButtonActive, innerShadowColor);
     padding: 7px;
     border-bottom: 1px solid rgb(220, 220, 220);
     cursor: pointer;
+    font-size: $basicButtonTextSize;
     &:hover {
       background-color: $basicButtonBackgroundHover;
       color: $basicButtonTextColorHover;

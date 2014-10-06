@@ -51,7 +51,8 @@
   .dropDownContainer .dropDownOption {
     padding: 7px;
     border-bottom: 1px solid gainsboro;
-    cursor: pointer; }
+    cursor: pointer;
+    font-size: 14px; }
     .dropDownContainer .dropDownOption:hover {
       background-color: #f7f7f7;
       color: #0099ff; }
