@@ -73,9 +73,9 @@ function addBasicButton(data) {
 
         if (this.dropDown == true) {
             this.dropDownContainer = document.createElement('div');
-            this.dropDownContainer.className= "dropDownContainer";
+            this.dropDownContainer.className = "dropDownContainer";
 
-            setTimeout(function() {
+            setTimeout(function () {
                 thisHolder.parentPosition = thisHolder.buttonBox.getBoundingClientRect();
                 thisHolder.parentPositionLeft = thisHolder.parentPosition.left;
                 thisHolder.parentPositionTop = thisHolder.parentPosition.top;
@@ -105,20 +105,24 @@ function addBasicButton(data) {
                 this.dropDownContainer.appendChild(this.createOption);
                 this.parent.appendChild(this.dropDownContainer);
 
-                this.createOption.onclick = function() {
+                this.createOption.onclick = function () {
                     thisHolder.dropDownContainer.style.display = "none";
                 }
             }
         }
+    }
 
-        this.buttonBox.onclick = function() {
+    this.buttonBox.onclick = function() {
+        var next = this.nextSibling;
+
+        if (next.className == "dropDownContainer") {
             if (thisHolder.dropDownContainer.style.display == "none") {
                 thisHolder.dropDownContainer.style.display = "block";
             } else {
                 thisHolder.dropDownContainer.style.display = "none";
             }
-        };
-    }
+        }
+    };
 
     if (data.buttonSize == "Big") {
         thisHolder.buttonBox.className = thisHolder.buttonClass + " basicButtonBig";
