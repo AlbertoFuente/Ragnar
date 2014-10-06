@@ -90,6 +90,7 @@ seriesButtonsObj.buttons.button1.buttonClass = "seriesButton";
 seriesButtonsObj.buttons.button1.buttonText = "First";
 seriesButtonsObj.buttons.button1.icon = false;
 seriesButtonsObj.buttons.button1.iconClass = "";
+seriesButtonsObj.buttons.button1.dropDown = false;
 
 // Second button
 seriesButtonsObj.buttons.button2.buttonId = "seriesButton-2";
@@ -97,6 +98,7 @@ seriesButtonsObj.buttons.button2.buttonClass = "seriesButton";
 seriesButtonsObj.buttons.button2.buttonText = "Second";
 seriesButtonsObj.buttons.button2.icon = false;
 seriesButtonsObj.buttons.button2.iconClass = "";
+seriesButtonsObj.buttons.button2.dropDown = false;
 
 // First button
 seriesButtonsObj.buttons.button3.buttonId = "seriesButton-3";
@@ -104,12 +106,19 @@ seriesButtonsObj.buttons.button3.buttonClass = "seriesButton";
 seriesButtonsObj.buttons.button3.buttonText = "Third";
 seriesButtonsObj.buttons.button3.icon = false;
 seriesButtonsObj.buttons.button3.iconClass = "";
+seriesButtonsObj.buttons.button3.dropDown = false;
 
 // First button
 seriesButtonsObj.buttons.button4.buttonId = "seriesButton-4";
 seriesButtonsObj.buttons.button4.buttonClass = "seriesButton";
 seriesButtonsObj.buttons.button4.buttonText = "Fourth";
-seriesButtonsObj.buttons.button4.icon = false;
-seriesButtonsObj.buttons.button4.iconClass = "";
+seriesButtonsObj.buttons.button4.icon = true;
+seriesButtonsObj.buttons.button4.iconClass = "fa fa-bars";
+seriesButtonsObj.buttons.button4.dropDown = true;
+seriesButtonsObj.buttons.button4.dropDownElements = {};
+seriesButtonsObj.buttons.button4.dropDownElements.element1 = "Option1";
+seriesButtonsObj.buttons.button4.dropDownElements.element2 = "Option2";
+seriesButtonsObj.buttons.button4.dropDownElements.element3 = "Option3";
+seriesButtonsObj.buttons.button4.dropDownElements.element4 = "Option4";
 
 addSeriesButtons(seriesButtonsObj);
