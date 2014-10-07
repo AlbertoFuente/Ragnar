@@ -242,8 +242,8 @@ function addSeriesButtons(data) {
                     thisHolder.dropDownContainerSeries.style.borderRadius = thisHolder.borderRadius;
                 }, 100);
 
-                for (var opt in this.divButton.dropDown) {
-                    this.dropOptions = this.divButton.dropDown[opt];
+                for (var opt in this.button.dropDownElements) {
+                    this.dropOptions = this.button.dropDownElements[opt];
 
                     this.createOptionS = document.createElement('div');
                     this.createOptionS.className = "dropDownOptionSeriesButtons";
@@ -266,7 +266,7 @@ function addSeriesButtons(data) {
             }
         }
         this.divButton.onclick = function() {
-            var next = this.nextSibling;
+            var next = this.parentNode.nextSibling;
 
             if (next.className == "dropDownContainerSeriesButtons") {
                 if (thisHolder.dropDownContainerSeries.style.display == "none") {
