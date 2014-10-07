@@ -288,3 +288,36 @@ function addSeriesButtons(data) {
         };
     }
 }
+
+function addRadioButton(data) {
+
+    if (data != undefined) {
+
+        this.parent = data.parentElement;
+        this.label = data.label;
+        this.labelText = data.labelText;
+
+        this.radioButtonContainer = document.createElement('div');
+        this.radioButtonContainer.className = "radioButtonContainer";
+
+        this.radioButton = document.createElement('div');
+        this.radioButton.className = "radioButton";
+
+        this.radioButtonActive = document.createElement('div');
+        this.radioButtonActive.className = "radioButtonActive";
+
+        if (this.label == true) {
+            this.labelRadioButtonContainer = document.createElement('div');
+            this.labelRadioButtonContainer.className = "labelRadioButtonContainer";
+
+            this.labelRadioButton = document.createTextNode(this.labelText);
+
+            this.labelRadioButtonContainer.appendChild(this.labelRadioButton);
+        }
+
+        this.radioButton.appendChild(this.radioButtonActive);
+        this.radioButtonContainer.appendChild(this.radioButton);
+        this.radioButtonContainer.appendChild(this.labelRadioButtonContainer);
+        this.parent.appendChild(this.radioButtonContainer);
+    }
+}

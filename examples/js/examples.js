@@ -122,3 +122,22 @@ seriesButtonsObj.buttons.button4.dropDownElements.element3 = "Option3";
 seriesButtonsObj.buttons.button4.dropDownElements.element4 = "Option4";
 
 addSeriesButtons(seriesButtonsObj);
+
+
+/**
+ * Radio Buttons text
+ */
+
+var radioButtonTextContainer = document.createElement('div');
+radioButtonTextContainer.className = "radioButtonTextContainer";
+var radioButtonTitleText = document.createTextNode('Radio Button Sample:');
+radioButtonTextContainer.appendChild(radioButtonTitleText);
+document.body.appendChild(radioButtonTextContainer);
+
+var radioButton = {};
+
+radioButton.label = true;
+radioButton.labelText = "Radio Button";
+radioButton.parentElement = document.body;
+
+addRadioButton(radioButton);
