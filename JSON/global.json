@@ -60,5 +60,33 @@
         "textColor": "rgb(255,255,255)",
         "textSize": "14px",
         "innerShadowColor": "#3769d9"
+    },
+    "radioButton": {
+        "backgroundColor": "rgb(255,255,255)",
+        "activeColor": "rgb(255,255,255)",
+        "borderColor": "rgb(0,153,1255)",
+        "borderSize": "1px",
+        "borderType": "solid",
+        "textColor": "rgb(0,153,1255)",
+        "textSize": "14px"
+    },
+    "radioButtonHover": {
+        "backgroundColor": "rgb(247,247,247)",
+        "activeColor": "rgb(247,247,247)",
+        "borderColor": "rgb(0,153,1255)",
+        "borderSize": "1px",
+        "borderType": "solid",
+        "textColor": "rgb(0,153,1255)",
+        "textSize": "14px"
+    },
+    "radioButtonActive": {
+        "backgroundColor": "rgb(255,255,255)",
+        "activeColor": "rgb(0,153,1255)",
+        "borderColor": "rgb(0,153,1255)",
+        "borderSize": "1px",
+        "borderType": "solid",
+        "textColor": "rgb(0,153,1255)",
+        "textSize": "14px"
     }
+
 }
