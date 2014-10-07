@@ -274,3 +274,73 @@ $seriesButtonsInnerShadowColorActive: map-get($seriesButtonsActive, innerShadowC
   padding: 10px 20px;
   text-align: center;
 }
+
+.dropDownContainerSeriesButtons {
+  box-shadow: 0 0 7px #a5a5a5;
+  .dropDownOptionSeriesButtons {
+    padding: 7px;
+    border-bottom: 1px solid rgb(220, 220, 220);
+    cursor: pointer;
+    font-size: $basicButtonTextSize;
+    &:hover {
+      background-color: $basicButtonBackgroundHover;
+      color: $basicButtonTextColorHover;
+    }
+    &:active {
+      background-color: $basicButtonBackgroundActive;
+      color: $basicButtonTextColorActive;
+    }
+  }
+  &:nth-child(1) {
+    -webkit-border-top-left-radius: $basicButtonBorderRadius;
+    -webkit-border-top-right-radius: $basicButtonBorderRadius;
+    -moz-border-radius-topleft: $basicButtonBorderRadius;
+    -moz-border-radius-topright: $basicButtonBorderRadius;
+    border-top-left-radius: $basicButtonBorderRadius;
+    border-top-right-radius: $basicButtonBorderRadius;
+    &:hover {
+      -webkit-border-top-left-radius: $basicButtonBorderRadius;
+      -webkit-border-top-right-radius: $basicButtonBorderRadius;
+      -moz-border-radius-topleft: $basicButtonBorderRadius;
+      -moz-border-radius-topright: $basicButtonBorderRadius;
+      border-top-left-radius: $basicButtonBorderRadius;
+      border-top-right-radius: $basicButtonBorderRadius;
+    }
+    &:active {
+      -webkit-border-top-left-radius: $basicButtonBorderRadius;
+      -webkit-border-top-right-radius: $basicButtonBorderRadius;
+      -moz-border-radius-topleft: $basicButtonBorderRadius;
+      -moz-border-radius-topright: $basicButtonBorderRadius;
+      border-top-left-radius: $basicButtonBorderRadius;
+      border-top-right-radius: $basicButtonBorderRadius;
+    }
+  }
+  &:last-child {
+    -webkit-border-bottom-right-radius: $basicButtonBorderRadius;
+    -webkit-border-bottom-left-radius: $basicButtonBorderRadius;
+    -moz-border-radius-bottomright: $basicButtonBorderRadius;
+    -moz-border-radius-bottomleft: $basicButtonBorderRadius;
+    border-bottom-right-radius: $basicButtonBorderRadius;
+    border-bottom-left-radius: $basicButtonBorderRadius;
+    border-bottom: none !important;
+    &:hover {
+      -webkit-border-bottom-right-radius: $basicButtonBorderRadius;
+      -webkit-border-bottom-left-radius: $basicButtonBorderRadius;
+      -moz-border-radius-bottomright: $basicButtonBorderRadius;
+      -moz-border-radius-bottomleft: $basicButtonBorderRadius;
+      border-bottom-right-radius: $basicButtonBorderRadius;
+      border-bottom-left-radius: $basicButtonBorderRadius;
+      border-bottom: none;
+    }
+    &:active {
+      -webkit-border-bottom-right-radius: $basicButtonBorderRadius;
+      -webkit-border-bottom-left-radius: $basicButtonBorderRadius;
+      -moz-border-radius-bottomright: $basicButtonBorderRadius;
+      -moz-border-radius-bottomleft: $basicButtonBorderRadius;
+      border-bottom-right-radius: $basicButtonBorderRadius;
+      border-bottom-left-radius: $basicButtonBorderRadius;
+      border-bottom: none;
+    }
+  }
+
+}
