@@ -141,3 +141,22 @@ radioButton.labelText = "Radio Button";
 radioButton.parentElement = document.body;
 
 addRadioButton(radioButton);
+
+
+/**
+ * Checkbox Button text
+ */
+
+var checkButtonTextContainer = document.createElement('div');
+checkButtonTextContainer.className = "checkButtonTextContainer";
+var checkButtonTitleText = document.createTextNode("Check Box Sample:");
+checkButtonTextContainer.appendChild(checkButtonTitleText);
+document.body.appendChild(checkButtonTextContainer);
+
+var checkButton = {};
+
+checkButton.label = true;
+checkButton.labelText = "Check Box Button";
+checkButton.parentElement = document.body;
+
+addCheckButton(checkButton);

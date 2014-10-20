@@ -290,7 +290,7 @@ function addSeriesButtons(data) {
 }
 
 function addRadioButton(data) {
-    var thisHolder = this;
+
     if (data != undefined) {
 
         this.parent = data.parentElement;
@@ -325,6 +325,43 @@ function addRadioButton(data) {
                 this.className = "radioButtonActive Active";
             } else {
                 this.className = "radioButtonActive";
+            }
+        }
+    }
+}
+
+function addCheckButton(data) {
+
+    if (data != undefined) {
+
+        this.parent = data.parentElement;
+        this.label = data.label;
+        this.labelText = data.labelText;
+
+        this.checkButtonContainer = document.createElement('div');
+        this.checkButtonContainer.className = "checkButtonContainer";
+
+        this.checkButton = document.createElement('div');
+        this.checkButton.className= "checkButton fa fa-check";
+
+        if (this.label == true) {
+            this.labelCheckButtonContainer = document.createElement('div');
+            this.labelCheckButtonContainer.className = "labelCheckButtonContainer";
+
+            this.labelCheckButton = document.createTextNode(this.labelText);
+
+            this.labelCheckButtonContainer.appendChild(this.labelCheckButton);
+        }
+
+        this.checkButtonContainer.appendChild(this.checkButton);
+        this.checkButtonContainer.appendChild(this.labelCheckButtonContainer);
+        this.parent.appendChild(this.checkButtonContainer);
+
+        this.checkButton.onclick = function() {
+            if (this.className == "checkButton fa fa-check") {
+                this.className = "checkButton fa fa-check Active";
+            } else {
+                this.className = "checkButton fa fa-check";
             }
         }
     }

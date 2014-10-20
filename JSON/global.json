@@ -87,6 +87,32 @@
         "borderType": "solid",
         "textColor": "rgb(0,153,1255)",
         "textSize": "14px"
+    },
+    "checkButton": {
+        "backgroundColor": "rgb(255,255,255)",
+        "activeColor": "rgb(255,255,255)",
+        "borderColor": "rgb(0,153,1255)",
+        "borderSize": "1px",
+        "borderType": "solid",
+        "textColor": "rgb(0,153,1255)",
+        "textSize": "14px"
+    },
+    "checkButtonHover": {
+        "backgroundColor": "rgb(247,247,247)",
+        "activeColor": "rgb(255,255,255)",
+        "borderColor": "rgb(0,153,1255)",
+        "borderSize": "1px",
+        "borderType": "solid",
+        "textColor": "rgb(0,153,1255)",
+        "textSize": "14px"
+    },
+    "checkButtonActive": {
+        "backgroundColor": "rgb(0,153,1255)",
+        "activeColor": "rgb(255,255,255)",
+        "borderColor": "rgb(0,153,1255)",
+        "borderSize": "1px",
+        "borderType": "solid",
+        "textColor": "rgb(0,153,1255)",
+        "textSize": "14px"
     }
-
 }
