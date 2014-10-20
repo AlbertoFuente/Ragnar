@@ -421,3 +421,74 @@ $radioButtonTextSizeActive: map-get($radioButtonActive, textSize);
     }
   }
 }
+
+// RADIO BUTTON VARS
+
+$checkButtonBackground: map-get($checkButton, backgroundColor);
+$checkButtonActiveColor: map-get($checkButton, activeColor);
+$checkButtonBorderColor: map-get($checkButton, borderColor);
+$checkButtonBorderSize: map-get($checkButton, borderSize);
+$checkButtonBorderType: map-get($checkButton, borderType);
+$checkButtonTextColor: map-get($checkButton, textColor);
+$checkButtonTextSize: map-get($checkButton, textSize);
+
+// check BUTTON Hover
+
+$checkButtonBackgroundHover: map-get($checkButtonHover, backgroundColor);
+$checkButtonActiveColorHover: map-get($checkButtonHover, activeColor);
+$checkButtonBorderColorHover: map-get($checkButtonHover, borderColor);
+$checkButtonBorderSizeHover: map-get($checkButtonHover, borderSize);
+$checkButtonBorderTypeHover: map-get($checkButtonHover, borderType);
+$checkButtonTextColorHover: map-get($checkButtonHover, textColor);
+$checkButtonTextSizeHover: map-get($checkButtonHover, textSize);
+
+// check BUTTON Active
+
+$checkButtonBackgroundActive: map-get($checkButtonActive, backgroundColor);
+$checkButtonActiveColorActive: map-get($checkButtonActive, activeColor);
+$checkButtonBorderColorActive: map-get($checkButtonActive, borderColor);
+$checkButtonBorderSizeActive: map-get($checkButtonActive, borderSize);
+$checkButtonBorderTypeActive: map-get($checkButtonActive, borderType);
+$checkButtonTextColorActive: map-get($checkButtonActive, textColor);
+$checkButtonTextSizeActive: map-get($checkButtonActive, textSize);
+
+@mixin check-button-border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+.checkButtonContainer {
+  width: auto;
+  height: auto;
+  .checkButton {
+    width: 19px;
+    height: 18px;
+    font-size: 16px;
+    @include check-button-border-radius(4px);
+    border: $checkButtonBorderSize $checkButtonBorderType $checkButtonBorderColor;
+    float: left;
+    margin-right: 8px;
+    text-align: center;
+    background: $checkButtonBackground;
+    padding-top: 3px;
+    color: $checkButtonActiveColor;
+    &:hover {
+      background: $checkButtonBackgroundHover;
+      color: $checkButtonActiveColorHover;
+    }
+    &:active {
+      background: $checkButtonBackgroundActive;
+      color:$checkButtonActiveColorActive;
+    }
+  }
+  .Active {
+    background: $checkButtonBackgroundActive;
+    color: $checkButtonActiveColorActive;
+    &:hover {
+      background: $checkButtonBackgroundActive;
+      color: $checkButtonActiveColorActive;
+    }
+  }
+}

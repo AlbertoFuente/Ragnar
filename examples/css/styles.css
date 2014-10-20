@@ -23,3 +23,9 @@ body {
     margin-top: 100px;
     margin-bottom: 20px;
 }
+
+.checkButtonTextContainer {
+    clear: both;
+    margin-top: 60px;
+    margin-bottom: 20px;
+}

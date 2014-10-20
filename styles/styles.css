@@ -263,4 +263,35 @@
     .radioButtonContainer .radioButton:active {
       background: white; }
 
+.checkButtonContainer {
+  width: auto;
+  height: auto; }
+  .checkButtonContainer .checkButton {
+    width: 19px;
+    height: 18px;
+    font-size: 16px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    border-radius: 4px;
+    border: 1px solid #0099ff;
+    float: left;
+    margin-right: 8px;
+    text-align: center;
+    background: white;
+    padding-top: 3px;
+    color: white; }
+    .checkButtonContainer .checkButton:hover {
+      background: #f7f7f7;
+      color: white; }
+    .checkButtonContainer .checkButton:active {
+      background: #0099ff;
+      color: white; }
+  .checkButtonContainer .Active {
+    background: #0099ff;
+    color: white; }
+    .checkButtonContainer .Active:hover {
+      background: #0099ff;
+      color: white; }
+
 /*# sourceMappingURL=styles.css.map */
