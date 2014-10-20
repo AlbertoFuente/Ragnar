@@ -393,7 +393,7 @@ $radioButtonTextSizeActive: map-get($radioButtonActive, textSize);
     margin-right: 8px;
     text-align: center;
     background: $radioButtonBackground;
-    padding-top: 2px;
+    padding-top: 3px;
     .radioButtonActive {
       width: 12px;
       height: 12px;
@@ -404,6 +404,12 @@ $radioButtonTextSizeActive: map-get($radioButtonActive, textSize);
         background: $radioButtonActiveColorHover;
       }
       &:active {
+        background: $radioButtonActiveColorActive;
+      }
+    }
+    .Active {
+      background: $radioButtonActiveColorActive;
+      &:hover {
         background: $radioButtonActiveColorActive;
       }
     }

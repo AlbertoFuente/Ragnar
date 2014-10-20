@@ -240,7 +240,7 @@
     margin-right: 8px;
     text-align: center;
     background: white;
-    padding-top: 2px; }
+    padding-top: 3px; }
     .radioButtonContainer .radioButton .radioButtonActive {
       width: 12px;
       height: 12px;
@@ -253,6 +253,10 @@
       .radioButtonContainer .radioButton .radioButtonActive:hover {
         background: #f7f7f7; }
       .radioButtonContainer .radioButton .radioButtonActive:active {
+        background: #0099ff; }
+    .radioButtonContainer .radioButton .Active {
+      background: #0099ff; }
+      .radioButtonContainer .radioButton .Active:hover {
         background: #0099ff; }
     .radioButtonContainer .radioButton:hover {
       background: #f7f7f7; }

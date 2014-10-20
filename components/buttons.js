@@ -290,7 +290,7 @@ function addSeriesButtons(data) {
 }
 
 function addRadioButton(data) {
-
+    var thisHolder = this;
     if (data != undefined) {
 
         this.parent = data.parentElement;
@@ -319,5 +319,13 @@ function addRadioButton(data) {
         this.radioButtonContainer.appendChild(this.radioButton);
         this.radioButtonContainer.appendChild(this.labelRadioButtonContainer);
         this.parent.appendChild(this.radioButtonContainer);
+
+        this.radioButtonActive.onclick = function() {
+            if (this.className == "radioButtonActive") {
+                this.className = "radioButtonActive Active";
+            } else {
+                this.className = "radioButtonActive";
+            }
+        }
     }
 }
