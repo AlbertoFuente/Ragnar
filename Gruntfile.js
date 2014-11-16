@@ -42,7 +42,6 @@ module.exports = function(grunt){
                     debugInfo: true,
                     logConnections: true,
                     notify: true,
-                    http: true,
                     port: "63342",
                     proxy: "/Ragnar/examples/index.html",
                     ghostMode: {

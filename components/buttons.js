@@ -3,17 +3,15 @@
  */
 
 function connectJSON() {
-    var url = "../JSON/global.json";
-    var data = {};
+    var url = "../JSON/global.json",
+        data = {};
 
     $.ajax({
-        type:"GET",
+        type: "GET",
         dataType: "json",
         url: url,
         success:function (result) {
-
-            if(result!=undefined){
-
+            if(result != undefined){
                 data = result;
             }
         },
@@ -24,9 +22,9 @@ function connectJSON() {
 
 function addBasicButton(data) {
 
-    var thisHolder = this;
-
-    var jsonData = connectJSON();
+    var thisHolder = this,
+        jsonData = connectJSON(),
+        opt = "";
 
     if (data != undefined) {
 
@@ -49,7 +47,7 @@ function addBasicButton(data) {
         this.dropDown = data.dropDown;
         this.dropDownElements = data.dropDownElements;
 
-        if (this.icon == true) {
+        if (this.icon) {
             this.buttonBox = document.createElement("div");
             this.buttonBox.id = thisHolder.buttonId;
 
@@ -71,7 +69,7 @@ function addBasicButton(data) {
             this.parent.appendChild(thisHolder.buttonBox);
         }
 
-        if (this.dropDown == true) {
+        if (this.dropDown) {
             this.dropDownContainer = document.createElement('div');
             this.dropDownContainer.className = "dropDownContainer";
 
@@ -94,7 +92,7 @@ function addBasicButton(data) {
                 thisHolder.dropDownContainer.style.borderRadius = thisHolder.borderRadius;
             }, 100);
 
-            for (var opt in this.dropDownElements) {
+            for (opt in this.dropDownElements) {
                 this.options = this.dropDownElements[opt];
 
                 this.createOption = document.createElement('div');
@@ -118,7 +116,7 @@ function addBasicButton(data) {
         }
     }
 
-    this.buttonBox.onclick = function() {
+    this.buttonBox.onclick = function () {
         var next = this.nextSibling;
 
         if (next.className == "dropDownContainer") {
@@ -151,9 +149,10 @@ function addBasicButton(data) {
 
 
 function addSeriesButtons(data) {
-    var thisHolder = this;
-
-    var jsonData = connectJSON();
+    var thisHolder = this,
+        jsonData = connectJSON(),
+        i = "",
+        opt = "";
 
     if (data != undefined) {
 
@@ -175,7 +174,7 @@ function addSeriesButtons(data) {
         this.buttonsContainer = document.createElement("div");
         this.buttonsContainer.className = "seriesButtonContainer";
 
-        for (var i in this.buttons) {
+        for (i in this.buttons) {
             this.button = this.buttons[i];
 
             this.divButton = document.createElement("div");
@@ -185,7 +184,7 @@ function addSeriesButtons(data) {
             this.divButton.iconClass = this.button.iconClass;
             this.divButton.dropDown = this.button.dropDown;
 
-            if (this.divButton.icon == true) {
+            if (this.divButton.icon) {
                 this.icon = document.createElement('i');
                 this.icon.className = this.divButton.iconClass;
                 this.icon.setAttribute('style', 'border-right: none !important; margin-right: 10px');
@@ -218,7 +217,7 @@ function addSeriesButtons(data) {
                 this.parent.appendChild(this.buttonsContainer);
             }
 
-            if (this.divButton.dropDown == true) {
+            if (this.divButton.dropDown) {
 
                 this.dropDownContainerSeries = document.createElement('div');
                 this.dropDownContainerSeries.className = "dropDownContainerSeriesButtons";
@@ -242,7 +241,7 @@ function addSeriesButtons(data) {
                     thisHolder.dropDownContainerSeries.style.borderRadius = thisHolder.borderRadius;
                 }, 100);
 
-                for (var opt in this.button.dropDownElements) {
+                for (opt in this.button.dropDownElements) {
                     this.dropOptions = this.button.dropDownElements[opt];
 
                     this.createOptionS = document.createElement('div');
@@ -265,7 +264,7 @@ function addSeriesButtons(data) {
                 }
             }
         }
-        this.divButton.onclick = function() {
+        this.divButton.onclick = function () {
             var next = this.parentNode.nextSibling;
 
             if (next.className == "dropDownContainerSeriesButtons") {
@@ -306,7 +305,7 @@ function addRadioButton(data) {
         this.radioButtonActive = document.createElement('div');
         this.radioButtonActive.className = "radioButtonActive";
 
-        if (this.label == true) {
+        if (this.label) {
             this.labelRadioButtonContainer = document.createElement('div');
             this.labelRadioButtonContainer.className = "labelRadioButtonContainer";
 
@@ -320,7 +319,7 @@ function addRadioButton(data) {
         this.radioButtonContainer.appendChild(this.labelRadioButtonContainer);
         this.parent.appendChild(this.radioButtonContainer);
 
-        this.radioButtonActive.onclick = function() {
+        this.radioButtonActive.onclick = function () {
             if (this.className == "radioButtonActive") {
                 this.className = "radioButtonActive Active";
             } else {
@@ -344,7 +343,7 @@ function addCheckButton(data) {
         this.checkButton = document.createElement('div');
         this.checkButton.className= "checkButton fa fa-check";
 
-        if (this.label == true) {
+        if (this.label) {
             this.labelCheckButtonContainer = document.createElement('div');
             this.labelCheckButtonContainer.className = "labelCheckButtonContainer";
 
@@ -357,7 +356,7 @@ function addCheckButton(data) {
         this.checkButtonContainer.appendChild(this.labelCheckButtonContainer);
         this.parent.appendChild(this.checkButtonContainer);
 
-        this.checkButton.onclick = function() {
+        this.checkButton.onclick = function () {
             if (this.className == "checkButton fa fa-check") {
                 this.className = "checkButton fa fa-check Active";
             } else {
