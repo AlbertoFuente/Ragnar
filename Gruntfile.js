@@ -20,9 +20,39 @@ module.exports = function(grunt){
                 }
 
             }
+        },
+        browserSync: {
 
+            dev: {
+
+                bsFiles: {
+                    src : [
+                        'components/*.js',
+                        'examples/js/*.js',
+                        'JSON/*.json',
+                        'vendor/*.js',
+                        'styles/*.css',
+                        'styles/*.scss',
+                        'examples/*.html'
+                    ]
+                },
+
+                options: {
+                    watchTask: true,
+                    debugInfo: true,
+                    logConnections: true,
+                    notify: true,
+                    proxy: "localhost:63342",
+                    ghostMode: {
+                        scroll: true,
+                        links: true,
+                        forms: true
+                    }
+                }
+            }
         }
     });
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-browser-sync');
 };
