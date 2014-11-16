@@ -42,7 +42,7 @@ module.exports = function(grunt){
                     debugInfo: true,
                     logConnections: true,
                     notify: true,
-                    proxy: "localhost:63342",
+                    proxy: "",
                     ghostMode: {
                         scroll: true,
                         links: true,
@@ -55,4 +55,5 @@ module.exports = function(grunt){
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-browser-sync');
+    grunt.registerTask('default', ["browserSync", "watch"]);
 };
