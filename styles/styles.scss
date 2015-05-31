@@ -1,44 +1,39 @@
-// IMPORT JSON FILE
-// FOR COMPILE USE COMMAND
-// NEED PLUGIN https://github.com/vigetlabs/sass-json-vars
-// sass styles/styles.scss -r sass-json-vars styles/styles.css
-
-@import "../JSON/global.json";
+@import 'global';
 
 // BASIC BUTTON VARS
 
-$basicButtonBackground: map-get($basicButton, backgroundColor);
-$basicButtonBorderColor: map-get($basicButton, borderColor);
-$basicButtonBorderSize: map-get($basicButton, borderSize);
-$basicButtonBorderType: map-get($basicButton, borderType);
-$basicButtonBorderRadius: map-get($basicButton, borderRadius);
-$basicButtonTextColor: map-get($basicButton, textColor);
-$basicButtonTextSize: map-get($basicButton, textSize);
-$basicButtonInnerShadow: map-get($basicButton, innerShadowColor);
+$basicButtonBackground: $basicButton-backgroundColor;
+$basicButtonBorderColor: $basicButton-borderColor;
+$basicButtonBorderSize: $basicButton-borderSize;
+$basicButtonBorderType: $basicButton-borderType;
+$basicButtonBorderRadius: $basicButton-borderRadius;
+$basicButtonTextColor: $basicButton-textColor;
+$basicButtonTextSize: $basicButton-textSize;
+$basicButtonInnerShadow: $basicButton-innerShadowColor;
 $basicButtonPaddingBig: "10px 15px 10px 15px";
 $basicButtonPaddingNormal: "5px 10px 5px 10px";
 
 // BASIC BUTTON Hover
 
-$basicButtonBackgroundHover: map-get($basicButtonHover, backgroundColor);
-$basicButtonBorderColorHover: map-get($basicButtonHover, borderColor);
-$basicButtonBorderSizeHover: map-get($basicButtonHover, borderSize);
-$basicButtonBorderTypeHover: map-get($basicButtonHover, borderType);
-$basicButtonBorderRadiusHover: map-get($basicButtonHover, borderRadius);
-$basicButtonTextColorHover: map-get($basicButtonHover, textColor);
-$basicButtonTextSizeHover: map-get($basicButtonHover, textSize);
-$basicButtonInnerShadowHover: map-get($basicButtonHover, innerShadowColor);
+$basicButtonBackgroundHover: $basicButtonHover-backgroundColor;
+$basicButtonBorderColorHover: $basicButtonHover-borderColor;
+$basicButtonBorderSizeHover: $basicButtonHover-borderSize;
+$basicButtonBorderTypeHover: $basicButtonHover-borderType;
+$basicButtonBorderRadiusHover: $basicButtonHover-borderRadius;
+$basicButtonTextColorHover: $basicButtonHover-textColor;
+$basicButtonTextSizeHover: $basicButtonHover-textSize;
+$basicButtonInnerShadowHover: $basicButtonHover-innerShadowColor;
 
 // BASIC BUTTON Active
 
-$basicButtonBackgroundActive: map-get($basicButtonActive, backgroundColor);
-$basicButtonBorderColorActive: map-get($basicButtonActive, borderColor);
-$basicButtonBorderSizeActive: map-get($basicButtonActive, borderSize);
-$basicButtonBorderTypeActive: map-get($basicButtonActive, borderType);
-$basicButtonBorderRadiusActive: map-get($basicButtonActive, borderRadius);
-$basicButtonTextColorActive: map-get($basicButtonActive, textColor);
-$basicButtonTextSizeActive: map-get($basicButtonActive, textSize);
-$basicButtonInnerShadowActive: map-get($basicButtonActive, innerShadowColor);
+$basicButtonBackgroundActive: $basicButtonActive-backgroundColor;
+$basicButtonBorderColorActive: $basicButtonActive-borderColor;
+$basicButtonBorderSizeActive: $basicButtonActive-borderSize;
+$basicButtonBorderTypeActive: $basicButtonActive-borderType;
+$basicButtonBorderRadiusActive: $basicButtonActive-borderRadius;
+$basicButtonTextColorActive: $basicButtonActive-textColor;
+$basicButtonTextSizeActive: $basicButtonActive-textSize;
+$basicButtonInnerShadowActive: $basicButtonActive-innerShadowColor;
 
 @mixin basic-button-border-radius($radius) {
   -webkit-border-radius: $radius;
@@ -167,36 +162,36 @@ $basicButtonInnerShadowActive: map-get($basicButtonActive, innerShadowColor);
 
 // SERIES BUTTONS VARS
 
-$seriesButtonsBackground: map-get($seriesButtons, backgroundColor);
-$seriesButtonsBorderColor: map-get($seriesButtons, borderColor);
-$seriesButtonsBorderSize: map-get($seriesButtons, borderSize);
-$seriesButtonsBorderType: map-get($seriesButtons, borderType);
-$seriesButtonsBorderRadius: map-get($seriesButtons, borderRadius);
-$seriesButtonsTextColor: map-get($seriesButtons, textColor);
-$seriesButtonsTextSize: map-get($seriesButtons, textSize);
-$seriesButtonsInnerShadowColor: map-get($seriesButtons, innerShadowColor);
+$seriesButtonsBackground: $seriesButtons-backgroundColor;
+$seriesButtonsBorderColor: $seriesButtons-borderColor;
+$seriesButtonsBorderSize: $seriesButtons-borderSize;
+$seriesButtonsBorderType: $seriesButtons-borderType;
+$seriesButtonsBorderRadius: $seriesButtons-borderRadius;
+$seriesButtonsTextColor: $seriesButtons-textColor;
+$seriesButtonsTextSize: $seriesButtons-textSize;
+$seriesButtonsInnerShadowColor: $seriesButtons-innerShadowColor;
 
 // SERIES BUTTONS Hover
 
-$seriesButtonsBackgroundHover: map-get($seriesButtonsHover, backgroundColor);
-$seriesButtonsBorderColorHover: map-get($seriesButtonsHover, borderColor);
-$seriesButtonsBorderSizeHover: map-get($seriesButtonsHover, borderSize);
-$seriesButtonsBorderTypeHover: map-get($seriesButtonsHover, borderType);
-$seriesButtonsBorderRadiusHover: map-get($seriesButtonsHover, borderRadius);
-$seriesButtonsTextColorHover: map-get($seriesButtonsHover, textColor);
-$seriesButtonsTextSizeHover: map-get($seriesButtonsHover, textSize);
-$seriesButtonsInnerShadowColorHover: map-get($seriesButtonsHover, innerShadowColor);
+$seriesButtonsBackgroundHover: $seriesButtonsHover-backgroundColor;
+$seriesButtonsBorderColorHover: $seriesButtonsHover-borderColor;
+$seriesButtonsBorderSizeHover: $seriesButtonsHover-borderSize;
+$seriesButtonsBorderTypeHover: $seriesButtonsHover-borderType;
+$seriesButtonsBorderRadiusHover: $seriesButtonsHover-borderRadius;
+$seriesButtonsTextColorHover: $seriesButtonsHover-textColor;
+$seriesButtonsTextSizeHover: $seriesButtonsHover-textSize;
+$seriesButtonsInnerShadowColorHover: $seriesButtonsHover-innerShadowColor;
 
 // SERIES BUTTONS Active
 
-$seriesButtonsBackgroundActive: map-get($seriesButtonsActive, backgroundColor);
-$seriesButtonsBorderColorActive: map-get($seriesButtonsActive, borderColor);
-$seriesButtonsBorderSizeActive: map-get($seriesButtonsActive, borderSize);
-$seriesButtonsBorderTypeActive: map-get($seriesButtonsActive, borderType);
-$seriesButtonsBorderRadiusActive: map-get($seriesButtonsActive, borderRadius);
-$seriesButtonsTextColorActive: map-get($seriesButtonsActive, textColor);
-$seriesButtonsTextSizeActive: map-get($seriesButtonsActive, textSize);
-$seriesButtonsInnerShadowColorActive: map-get($seriesButtonsActive, innerShadowColor);
+$seriesButtonsBackgroundActive: $seriesButtonsActive-backgroundColor;
+$seriesButtonsBorderColorActive: $seriesButtonsActive-borderColor;
+$seriesButtonsBorderSizeActive: $seriesButtonsActive-borderSize;
+$seriesButtonsBorderTypeActive: $seriesButtonsActive-borderType;
+$seriesButtonsBorderRadiusActive: $seriesButtonsActive-borderRadius;
+$seriesButtonsTextColorActive: $seriesButtonsActive-textColor;
+$seriesButtonsTextSizeActive: $seriesButtonsActive-textSize;
+$seriesButtonsInnerShadowColorActive: $seriesButtonsActive-innerShadowColor;
 
 @mixin series-buttons-border-radius-first($radius) {
   -webkit-border-top-left-radius: $radius;
@@ -346,33 +341,33 @@ $seriesButtonsInnerShadowColorActive: map-get($seriesButtonsActive, innerShadowC
 
 // RADIO BUTTON VARS
 
-$radioButtonBackground: map-get($radioButton, backgroundColor);
-$radioButtonActiveColor: map-get($radioButton, activeColor);
-$radioButtonBorderColor: map-get($radioButton, borderColor);
-$radioButtonBorderSize: map-get($radioButton, borderSize);
-$radioButtonBorderType: map-get($radioButton, borderType);
-$radioButtonTextColor: map-get($radioButton, textColor);
-$radioButtonTextSize: map-get($radioButton, textSize);
+$radioButtonBackground: $radioButton-backgroundColor;
+$radioButtonActiveColor: $radioButton-activeColor;
+$radioButtonBorderColor: $radioButton-borderColor;
+$radioButtonBorderSize: $radioButton-borderSize;
+$radioButtonBorderType: $radioButton-borderType;
+$radioButtonTextColor: $radioButton-textColor;
+$radioButtonTextSize: $radioButton-textSize;
 
 // RADIO BUTTON Hover
 
-$radioButtonBackgroundHover: map-get($radioButtonHover, backgroundColor);
-$radioButtonActiveColorHover: map-get($radioButtonHover, activeColor);
-$radioButtonBorderColorHover: map-get($radioButtonHover, borderColor);
-$radioButtonBorderSizeHover: map-get($radioButtonHover, borderSize);
-$radioButtonBorderTypeHover: map-get($radioButtonHover, borderType);
-$radioButtonTextColorHover: map-get($radioButtonHover, textColor);
-$radioButtonTextSizeHover: map-get($radioButtonHover, textSize);
+$radioButtonBackgroundHover: $radioButtonHover-backgroundColor;
+$radioButtonActiveColorHover: $radioButtonHover-activeColor;
+$radioButtonBorderColorHover: $radioButtonHover-borderColor;
+$radioButtonBorderSizeHover: $radioButtonHover-borderSize;
+$radioButtonBorderTypeHover: $radioButtonHover-borderType;
+$radioButtonTextColorHover: $radioButtonHover-textColor;
+$radioButtonTextSizeHover: $radioButtonHover-textSize;
 
 // RADIO BUTTON Active
 
-$radioButtonBackgroundActive: map-get($radioButtonActive, backgroundColor);
-$radioButtonActiveColorActive: map-get($radioButtonActive, activeColor);
-$radioButtonBorderColorActive: map-get($radioButtonActive, borderColor);
-$radioButtonBorderSizeActive: map-get($radioButtonActive, borderSize);
-$radioButtonBorderTypeActive: map-get($radioButtonActive, borderType);
-$radioButtonTextColorActive: map-get($radioButtonActive, textColor);
-$radioButtonTextSizeActive: map-get($radioButtonActive, textSize);
+$radioButtonBackgroundActive: $radioButtonActive-backgroundColor;
+$radioButtonActiveColorActive: $radioButtonActive-activeColor;
+$radioButtonBorderColorActive: $radioButtonActive-borderColor;
+$radioButtonBorderSizeActive: $radioButtonActive-borderSize;
+$radioButtonBorderTypeActive: $radioButtonActive-borderType;
+$radioButtonTextColorActive: $radioButtonActive-textColor;
+$radioButtonTextSizeActive: $radioButtonActive-textSize;
 
 @mixin radio-button-border-radius($radius) {
   -webkit-border-radius: $radius;
@@ -424,33 +419,33 @@ $radioButtonTextSizeActive: map-get($radioButtonActive, textSize);
 
 // RADIO BUTTON VARS
 
-$checkButtonBackground: map-get($checkButton, backgroundColor);
-$checkButtonActiveColor: map-get($checkButton, activeColor);
-$checkButtonBorderColor: map-get($checkButton, borderColor);
-$checkButtonBorderSize: map-get($checkButton, borderSize);
-$checkButtonBorderType: map-get($checkButton, borderType);
-$checkButtonTextColor: map-get($checkButton, textColor);
-$checkButtonTextSize: map-get($checkButton, textSize);
+$checkButtonBackground: $checkButton-backgroundColor;
+$checkButtonActiveColor: $checkButton-activeColor;
+$checkButtonBorderColor: $checkButton-borderColor;
+$checkButtonBorderSize: $checkButton-borderSize;
+$checkButtonBorderType: $checkButton-borderType;
+$checkButtonTextColor: $checkButton-textColor;
+$checkButtonTextSize: $checkButton-textSize;
 
 // check BUTTON Hover
 
-$checkButtonBackgroundHover: map-get($checkButtonHover, backgroundColor);
-$checkButtonActiveColorHover: map-get($checkButtonHover, activeColor);
-$checkButtonBorderColorHover: map-get($checkButtonHover, borderColor);
-$checkButtonBorderSizeHover: map-get($checkButtonHover, borderSize);
-$checkButtonBorderTypeHover: map-get($checkButtonHover, borderType);
-$checkButtonTextColorHover: map-get($checkButtonHover, textColor);
-$checkButtonTextSizeHover: map-get($checkButtonHover, textSize);
+$checkButtonBackgroundHover: $checkButtonHover-backgroundColor;
+$checkButtonActiveColorHover: $checkButtonHover-activeColor;
+$checkButtonBorderColorHover: $checkButtonHover-borderColor;
+$checkButtonBorderSizeHover: $checkButtonHover-borderSize;
+$checkButtonBorderTypeHover: $checkButtonHover-borderType;
+$checkButtonTextColorHover: $checkButtonHover-textColor;
+$checkButtonTextSizeHover: $checkButtonHover-textSize;
 
 // check BUTTON Active
 
-$checkButtonBackgroundActive: map-get($checkButtonActive, backgroundColor);
-$checkButtonActiveColorActive: map-get($checkButtonActive, activeColor);
-$checkButtonBorderColorActive: map-get($checkButtonActive, borderColor);
-$checkButtonBorderSizeActive: map-get($checkButtonActive, borderSize);
-$checkButtonBorderTypeActive: map-get($checkButtonActive, borderType);
-$checkButtonTextColorActive: map-get($checkButtonActive, textColor);
-$checkButtonTextSizeActive: map-get($checkButtonActive, textSize);
+$checkButtonBackgroundActive: $checkButtonActive-backgroundColor;
+$checkButtonActiveColorActive: $checkButtonActive-activeColor;
+$checkButtonBorderColorActive: $checkButtonActive-borderColor;
+$checkButtonBorderSizeActive: $checkButtonActive-borderSize;
+$checkButtonBorderTypeActive: $checkButtonActive-borderType;
+$checkButtonTextColorActive: $checkButtonActive-textColor;
+$checkButtonTextSizeActive: $checkButtonActive-textSize;
 
 @mixin check-button-border-radius($radius) {
   -webkit-border-radius: $radius;
