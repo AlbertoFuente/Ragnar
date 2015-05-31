@@ -1,0 +1,494 @@
+// IMPORT JSON FILE
+// FOR COMPILE USE COMMAND
+// NEED PLUGIN https://github.com/vigetlabs/sass-json-vars
+// sass styles/styles.scss -r sass-json-vars styles/styles.css
+
+@import "../JSON/global.json";
+
+// BASIC BUTTON VARS
+
+$basicButtonBackground: map-get($basicButton, backgroundColor);
+$basicButtonBorderColor: map-get($basicButton, borderColor);
+$basicButtonBorderSize: map-get($basicButton, borderSize);
+$basicButtonBorderType: map-get($basicButton, borderType);
+$basicButtonBorderRadius: map-get($basicButton, borderRadius);
+$basicButtonTextColor: map-get($basicButton, textColor);
+$basicButtonTextSize: map-get($basicButton, textSize);
+$basicButtonInnerShadow: map-get($basicButton, innerShadowColor);
+$basicButtonPaddingBig: "10px 15px 10px 15px";
+$basicButtonPaddingNormal: "5px 10px 5px 10px";
+
+// BASIC BUTTON Hover
+
+$basicButtonBackgroundHover: map-get($basicButtonHover, backgroundColor);
+$basicButtonBorderColorHover: map-get($basicButtonHover, borderColor);
+$basicButtonBorderSizeHover: map-get($basicButtonHover, borderSize);
+$basicButtonBorderTypeHover: map-get($basicButtonHover, borderType);
+$basicButtonBorderRadiusHover: map-get($basicButtonHover, borderRadius);
+$basicButtonTextColorHover: map-get($basicButtonHover, textColor);
+$basicButtonTextSizeHover: map-get($basicButtonHover, textSize);
+$basicButtonInnerShadowHover: map-get($basicButtonHover, innerShadowColor);
+
+// BASIC BUTTON Active
+
+$basicButtonBackgroundActive: map-get($basicButtonActive, backgroundColor);
+$basicButtonBorderColorActive: map-get($basicButtonActive, borderColor);
+$basicButtonBorderSizeActive: map-get($basicButtonActive, borderSize);
+$basicButtonBorderTypeActive: map-get($basicButtonActive, borderType);
+$basicButtonBorderRadiusActive: map-get($basicButtonActive, borderRadius);
+$basicButtonTextColorActive: map-get($basicButtonActive, textColor);
+$basicButtonTextSizeActive: map-get($basicButtonActive, textSize);
+$basicButtonInnerShadowActive: map-get($basicButtonActive, innerShadowColor);
+
+@mixin basic-button-border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+.basicButton {
+  background-color: $basicButtonBackground;
+  border: $basicButtonBorderSize $basicButtonBorderType $basicButtonBorderColor;
+  color: $basicButtonTextColor;
+  font-size: $basicButtonTextSize;
+  cursor: pointer;
+  -moz-box-shadow:    inset 0 0 10px $basicButtonInnerShadow;
+  -webkit-box-shadow: inset 0 0 10px $basicButtonInnerShadow;
+  box-shadow:         inset 0 0 10px $basicButtonInnerShadow;
+  @include basic-button-border-radius($basicButtonBorderRadius);
+  &:hover {
+    background-color: $basicButtonBackgroundHover;
+    border: $basicButtonBorderSizeHover $basicButtonBorderTypeHover $basicButtonBorderColorHover;
+    color: $basicButtonTextColorHover;
+    font-size: $basicButtonTextSizeHover;
+    -moz-box-shadow:    inset 0 0 10px $basicButtonInnerShadowHover;
+    -webkit-box-shadow: inset 0 0 10px $basicButtonInnerShadowHover;
+    box-shadow:         inset 0 0 10px $basicButtonInnerShadowHover;
+  }
+  &:active {
+    background-color: $basicButtonBackgroundActive;
+    border: $basicButtonBorderSizeActive $basicButtonBorderTypeActive $basicButtonBorderColorActive;
+    color: $basicButtonTextColorActive;
+    font-size: $basicButtonTextSizeActive;
+    -moz-box-shadow:    inset 0 0 10px $basicButtonInnerShadowActive;
+    -webkit-box-shadow: inset 0 0 10px $basicButtonInnerShadowActive;
+    box-shadow:         inset 0 0 10px $basicButtonInnerShadowActive;
+  }
+  .iconBasicButton {
+    margin-right: 10px;
+    text-align: left;
+  }
+}
+.basicButtonBig {
+  width: 100px;
+  padding: 10px 20px;
+  text-align: center;
+}
+.basicButtonNormal {
+  width: 80px;
+  padding: 10px 20px;
+  text-align: center;
+}
+.basicButtonSmall {
+  width: 60px;
+  padding: 10px 20px;
+  text-align: center;
+}
+.dropDownContainer {
+  box-shadow: 0 0 7px #a5a5a5;
+  .dropDownOption {
+    padding: 7px;
+    border-bottom: 1px solid rgb(220, 220, 220);
+    cursor: pointer;
+    font-size: $basicButtonTextSize;
+    &:hover {
+      background-color: $basicButtonBackgroundHover;
+      color: $basicButtonTextColorHover;
+    }
+    &:active {
+      background-color: $basicButtonBackgroundActive;
+      color: $basicButtonTextColorActive;
+    }
+  }
+  &:nth-child(1) {
+    -webkit-border-top-left-radius: $basicButtonBorderRadius;
+    -webkit-border-top-right-radius: $basicButtonBorderRadius;
+    -moz-border-radius-topleft: $basicButtonBorderRadius;
+    -moz-border-radius-topright: $basicButtonBorderRadius;
+    border-top-left-radius: $basicButtonBorderRadius;
+    border-top-right-radius: $basicButtonBorderRadius;
+    &:hover {
+      -webkit-border-top-left-radius: $basicButtonBorderRadius;
+      -webkit-border-top-right-radius: $basicButtonBorderRadius;
+      -moz-border-radius-topleft: $basicButtonBorderRadius;
+      -moz-border-radius-topright: $basicButtonBorderRadius;
+      border-top-left-radius: $basicButtonBorderRadius;
+      border-top-right-radius: $basicButtonBorderRadius;
+    }
+    &:active {
+      -webkit-border-top-left-radius: $basicButtonBorderRadius;
+      -webkit-border-top-right-radius: $basicButtonBorderRadius;
+      -moz-border-radius-topleft: $basicButtonBorderRadius;
+      -moz-border-radius-topright: $basicButtonBorderRadius;
+      border-top-left-radius: $basicButtonBorderRadius;
+      border-top-right-radius: $basicButtonBorderRadius;
+    }
+  }
+  &:last-child {
+    -webkit-border-bottom-right-radius: $basicButtonBorderRadius;
+    -webkit-border-bottom-left-radius: $basicButtonBorderRadius;
+    -moz-border-radius-bottomright: $basicButtonBorderRadius;
+    -moz-border-radius-bottomleft: $basicButtonBorderRadius;
+    border-bottom-right-radius: $basicButtonBorderRadius;
+    border-bottom-left-radius: $basicButtonBorderRadius;
+    border-bottom: none !important;
+    &:hover {
+      -webkit-border-bottom-right-radius: $basicButtonBorderRadius;
+      -webkit-border-bottom-left-radius: $basicButtonBorderRadius;
+      -moz-border-radius-bottomright: $basicButtonBorderRadius;
+      -moz-border-radius-bottomleft: $basicButtonBorderRadius;
+      border-bottom-right-radius: $basicButtonBorderRadius;
+      border-bottom-left-radius: $basicButtonBorderRadius;
+      border-bottom: none;
+    }
+    &:active {
+      -webkit-border-bottom-right-radius: $basicButtonBorderRadius;
+      -webkit-border-bottom-left-radius: $basicButtonBorderRadius;
+      -moz-border-radius-bottomright: $basicButtonBorderRadius;
+      -moz-border-radius-bottomleft: $basicButtonBorderRadius;
+      border-bottom-right-radius: $basicButtonBorderRadius;
+      border-bottom-left-radius: $basicButtonBorderRadius;
+      border-bottom: none;
+    }
+  }
+
+}
+
+// SERIES BUTTONS VARS
+
+$seriesButtonsBackground: map-get($seriesButtons, backgroundColor);
+$seriesButtonsBorderColor: map-get($seriesButtons, borderColor);
+$seriesButtonsBorderSize: map-get($seriesButtons, borderSize);
+$seriesButtonsBorderType: map-get($seriesButtons, borderType);
+$seriesButtonsBorderRadius: map-get($seriesButtons, borderRadius);
+$seriesButtonsTextColor: map-get($seriesButtons, textColor);
+$seriesButtonsTextSize: map-get($seriesButtons, textSize);
+$seriesButtonsInnerShadowColor: map-get($seriesButtons, innerShadowColor);
+
+// SERIES BUTTONS Hover
+
+$seriesButtonsBackgroundHover: map-get($seriesButtonsHover, backgroundColor);
+$seriesButtonsBorderColorHover: map-get($seriesButtonsHover, borderColor);
+$seriesButtonsBorderSizeHover: map-get($seriesButtonsHover, borderSize);
+$seriesButtonsBorderTypeHover: map-get($seriesButtonsHover, borderType);
+$seriesButtonsBorderRadiusHover: map-get($seriesButtonsHover, borderRadius);
+$seriesButtonsTextColorHover: map-get($seriesButtonsHover, textColor);
+$seriesButtonsTextSizeHover: map-get($seriesButtonsHover, textSize);
+$seriesButtonsInnerShadowColorHover: map-get($seriesButtonsHover, innerShadowColor);
+
+// SERIES BUTTONS Active
+
+$seriesButtonsBackgroundActive: map-get($seriesButtonsActive, backgroundColor);
+$seriesButtonsBorderColorActive: map-get($seriesButtonsActive, borderColor);
+$seriesButtonsBorderSizeActive: map-get($seriesButtonsActive, borderSize);
+$seriesButtonsBorderTypeActive: map-get($seriesButtonsActive, borderType);
+$seriesButtonsBorderRadiusActive: map-get($seriesButtonsActive, borderRadius);
+$seriesButtonsTextColorActive: map-get($seriesButtonsActive, textColor);
+$seriesButtonsTextSizeActive: map-get($seriesButtonsActive, textSize);
+$seriesButtonsInnerShadowColorActive: map-get($seriesButtonsActive, innerShadowColor);
+
+@mixin series-buttons-border-radius-first($radius) {
+  -webkit-border-top-left-radius: $radius;
+  -webkit-border-bottom-left-radius: $radius;
+  -moz-border-radius-topleft: $radius;
+  -moz-border-radius-bottomleft: $radius;
+  border-top-left-radius: $radius;
+  border-bottom-left-radius: $radius;
+}
+
+@mixin series-buttons-border-radius-last($radius) {
+  -webkit-border-top-right-radius: $radius;
+  -webkit-border-bottom-right-radius: $radius;
+  -moz-border-radius-topright: $radius;
+  -moz-border-radius-bottomright: $radius;
+  border-top-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+}
+
+.seriesButton {
+  float: left;
+  background-color: $seriesButtonsBackground;
+  border: $seriesButtonsBorderSize $seriesButtonsBorderType $seriesButtonsBorderColor;
+  border-right: none;
+  color: $seriesButtonsTextColor;
+  font-size: $seriesButtonsTextSize;
+  cursor: pointer;
+  -moz-box-shadow:    inset 0 0 10px $seriesButtonsInnerShadowColor;
+  -webkit-box-shadow: inset 0 0 10px $seriesButtonsInnerShadowColor;
+  box-shadow:         inset 0 0 10px $seriesButtonsInnerShadowColor;
+  &:hover {
+    background-color: $seriesButtonsBackgroundHover;
+    border: $seriesButtonsBorderSizeHover $seriesButtonsBorderTypeHover $seriesButtonsBorderColorHover;
+    border-right: none;
+    color: $seriesButtonsTextColorHover;
+    font-size: $seriesButtonsTextSizeHover;
+    -moz-box-shadow:    inset 0 0 10px $seriesButtonsInnerShadowColorHover;
+    -webkit-box-shadow: inset 0 0 10px $seriesButtonsInnerShadowColorHover;
+    box-shadow:         inset 0 0 10px $seriesButtonsInnerShadowColorHover;
+  }
+  &:active {
+    background-color: $seriesButtonsBackgroundActive;
+    border: $seriesButtonsBorderSizeActive $seriesButtonsBorderTypeActive $seriesButtonsBorderColorActive;
+    border-right: none;
+    color: $seriesButtonsTextColorActive;
+    font-size: $seriesButtonsTextSizeActive;
+    -moz-box-shadow:    inset 0 0 10px $seriesButtonsInnerShadowColorActive;
+    -webkit-box-shadow: inset 0 0 10px $seriesButtonsInnerShadowColorActive;
+    box-shadow:         inset 0 0 10px $seriesButtonsInnerShadowColorActive;
+  }
+}
+
+.seriesButtonContainer {
+  :nth-child(1) {
+    @include series-buttons-border-radius-first($seriesButtonsBorderRadius);
+  }
+  :last-child {
+    @include series-buttons-border-radius-last($seriesButtonsBorderRadius);
+    border-right: $seriesButtonsBorderSize $seriesButtonsBorderType $seriesButtonsBorderColor !important;
+  }
+}
+
+.seriesButtonsBig {
+  width: 100px;
+  padding: 10px 20px;
+  text-align: center;
+}
+.seriesButtonsNormal {
+  width: 80px;
+  padding: 10px 20px;
+  text-align: center;
+}
+.seriesButtonsSmall {
+  width: 60px;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+.dropDownContainerSeriesButtons {
+  box-shadow: 0 0 7px #a5a5a5;
+  .dropDownOptionSeriesButtons {
+    padding: 7px;
+    border-bottom: 1px solid rgb(220, 220, 220);
+    cursor: pointer;
+    font-size: $basicButtonTextSize;
+    &:hover {
+      background-color: $basicButtonBackgroundHover;
+      color: $basicButtonTextColorHover;
+    }
+    &:active {
+      background-color: $basicButtonBackgroundActive;
+      color: $basicButtonTextColorActive;
+    }
+  }
+  &:nth-child(1) {
+    -webkit-border-top-left-radius: $basicButtonBorderRadius;
+    -webkit-border-top-right-radius: $basicButtonBorderRadius;
+    -moz-border-radius-topleft: $basicButtonBorderRadius;
+    -moz-border-radius-topright: $basicButtonBorderRadius;
+    border-top-left-radius: $basicButtonBorderRadius;
+    border-top-right-radius: $basicButtonBorderRadius;
+    &:hover {
+      -webkit-border-top-left-radius: $basicButtonBorderRadius;
+      -webkit-border-top-right-radius: $basicButtonBorderRadius;
+      -moz-border-radius-topleft: $basicButtonBorderRadius;
+      -moz-border-radius-topright: $basicButtonBorderRadius;
+      border-top-left-radius: $basicButtonBorderRadius;
+      border-top-right-radius: $basicButtonBorderRadius;
+    }
+    &:active {
+      -webkit-border-top-left-radius: $basicButtonBorderRadius;
+      -webkit-border-top-right-radius: $basicButtonBorderRadius;
+      -moz-border-radius-topleft: $basicButtonBorderRadius;
+      -moz-border-radius-topright: $basicButtonBorderRadius;
+      border-top-left-radius: $basicButtonBorderRadius;
+      border-top-right-radius: $basicButtonBorderRadius;
+    }
+  }
+  &:last-child {
+    -webkit-border-bottom-right-radius: $basicButtonBorderRadius;
+    -webkit-border-bottom-left-radius: $basicButtonBorderRadius;
+    -moz-border-radius-bottomright: $basicButtonBorderRadius;
+    -moz-border-radius-bottomleft: $basicButtonBorderRadius;
+    border-bottom-right-radius: $basicButtonBorderRadius;
+    border-bottom-left-radius: $basicButtonBorderRadius;
+    border-bottom: none !important;
+    &:hover {
+      -webkit-border-bottom-right-radius: $basicButtonBorderRadius;
+      -webkit-border-bottom-left-radius: $basicButtonBorderRadius;
+      -moz-border-radius-bottomright: $basicButtonBorderRadius;
+      -moz-border-radius-bottomleft: $basicButtonBorderRadius;
+      border-bottom-right-radius: $basicButtonBorderRadius;
+      border-bottom-left-radius: $basicButtonBorderRadius;
+      border-bottom: none;
+    }
+    &:active {
+      -webkit-border-bottom-right-radius: $basicButtonBorderRadius;
+      -webkit-border-bottom-left-radius: $basicButtonBorderRadius;
+      -moz-border-radius-bottomright: $basicButtonBorderRadius;
+      -moz-border-radius-bottomleft: $basicButtonBorderRadius;
+      border-bottom-right-radius: $basicButtonBorderRadius;
+      border-bottom-left-radius: $basicButtonBorderRadius;
+      border-bottom: none;
+    }
+  }
+}
+
+// RADIO BUTTON VARS
+
+$radioButtonBackground: map-get($radioButton, backgroundColor);
+$radioButtonActiveColor: map-get($radioButton, activeColor);
+$radioButtonBorderColor: map-get($radioButton, borderColor);
+$radioButtonBorderSize: map-get($radioButton, borderSize);
+$radioButtonBorderType: map-get($radioButton, borderType);
+$radioButtonTextColor: map-get($radioButton, textColor);
+$radioButtonTextSize: map-get($radioButton, textSize);
+
+// RADIO BUTTON Hover
+
+$radioButtonBackgroundHover: map-get($radioButtonHover, backgroundColor);
+$radioButtonActiveColorHover: map-get($radioButtonHover, activeColor);
+$radioButtonBorderColorHover: map-get($radioButtonHover, borderColor);
+$radioButtonBorderSizeHover: map-get($radioButtonHover, borderSize);
+$radioButtonBorderTypeHover: map-get($radioButtonHover, borderType);
+$radioButtonTextColorHover: map-get($radioButtonHover, textColor);
+$radioButtonTextSizeHover: map-get($radioButtonHover, textSize);
+
+// RADIO BUTTON Active
+
+$radioButtonBackgroundActive: map-get($radioButtonActive, backgroundColor);
+$radioButtonActiveColorActive: map-get($radioButtonActive, activeColor);
+$radioButtonBorderColorActive: map-get($radioButtonActive, borderColor);
+$radioButtonBorderSizeActive: map-get($radioButtonActive, borderSize);
+$radioButtonBorderTypeActive: map-get($radioButtonActive, borderType);
+$radioButtonTextColorActive: map-get($radioButtonActive, textColor);
+$radioButtonTextSizeActive: map-get($radioButtonActive, textSize);
+
+@mixin radio-button-border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+.radioButtonContainer {
+  width: auto;
+  height: auto;
+  .radioButton {
+    width: 16px;
+    height: 15px;
+    @include radio-button-border-radius(100px);
+    border: $radioButtonBorderSize $radioButtonBorderType $radioButtonBorderColor;
+    float: left;
+    margin-right: 8px;
+    text-align: center;
+    background: $radioButtonBackground;
+    padding-top: 3px;
+    .radioButtonActive {
+      width: 12px;
+      height: 12px;
+      background: $radioButtonActiveColor;
+      @include radio-button-border-radius(100px);
+      margin: 0 auto;
+      &:hover {
+        background: $radioButtonActiveColorHover;
+      }
+      &:active {
+        background: $radioButtonActiveColorActive;
+      }
+    }
+    .Active {
+      background: $radioButtonActiveColorActive;
+      &:hover {
+        background: $radioButtonActiveColorActive;
+      }
+    }
+    &:hover {
+      background: $radioButtonBackgroundHover;
+    }
+    &:active {
+      background: $radioButtonBackgroundActive;
+    }
+  }
+}
+
+// RADIO BUTTON VARS
+
+$checkButtonBackground: map-get($checkButton, backgroundColor);
+$checkButtonActiveColor: map-get($checkButton, activeColor);
+$checkButtonBorderColor: map-get($checkButton, borderColor);
+$checkButtonBorderSize: map-get($checkButton, borderSize);
+$checkButtonBorderType: map-get($checkButton, borderType);
+$checkButtonTextColor: map-get($checkButton, textColor);
+$checkButtonTextSize: map-get($checkButton, textSize);
+
+// check BUTTON Hover
+
+$checkButtonBackgroundHover: map-get($checkButtonHover, backgroundColor);
+$checkButtonActiveColorHover: map-get($checkButtonHover, activeColor);
+$checkButtonBorderColorHover: map-get($checkButtonHover, borderColor);
+$checkButtonBorderSizeHover: map-get($checkButtonHover, borderSize);
+$checkButtonBorderTypeHover: map-get($checkButtonHover, borderType);
+$checkButtonTextColorHover: map-get($checkButtonHover, textColor);
+$checkButtonTextSizeHover: map-get($checkButtonHover, textSize);
+
+// check BUTTON Active
+
+$checkButtonBackgroundActive: map-get($checkButtonActive, backgroundColor);
+$checkButtonActiveColorActive: map-get($checkButtonActive, activeColor);
+$checkButtonBorderColorActive: map-get($checkButtonActive, borderColor);
+$checkButtonBorderSizeActive: map-get($checkButtonActive, borderSize);
+$checkButtonBorderTypeActive: map-get($checkButtonActive, borderType);
+$checkButtonTextColorActive: map-get($checkButtonActive, textColor);
+$checkButtonTextSizeActive: map-get($checkButtonActive, textSize);
+
+@mixin check-button-border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+.checkButtonContainer {
+  width: auto;
+  height: auto;
+  .checkButton {
+    width: 19px;
+    height: 18px;
+    font-size: 16px;
+    @include check-button-border-radius(4px);
+    border: $checkButtonBorderSize $checkButtonBorderType $checkButtonBorderColor;
+    float: left;
+    margin-right: 8px;
+    text-align: center;
+    background: $checkButtonBackground;
+    padding-top: 3px;
+    color: $checkButtonActiveColor;
+    &:hover {
+      background: $checkButtonBackgroundHover;
+      color: $checkButtonActiveColorHover;
+    }
+    &:active {
+      background: $checkButtonBackgroundActive;
+      color:$checkButtonActiveColorActive;
+    }
+  }
+  .Active {
+    background: $checkButtonBackgroundActive;
+    color: $checkButtonActiveColorActive;
+    &:hover {
+      background: $checkButtonBackgroundActive;
+      color: $checkButtonActiveColorActive;
+    }
+  }
+}
