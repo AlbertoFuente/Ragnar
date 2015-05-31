@@ -1,28 +1,28 @@
 {
     "basicButton": {
-        "buttonSize": "Big",
+        "buttonSize": "big",
         "backgroundColor": "rgb(255,255,255)",
-        "borderColor": "rgb(0,153,1255)",
+        "borderColor": "rgb(0,153,255)",
         "borderSize": "1px",
         "borderType": "solid",
         "borderRadius": "4px",
-        "textColor": "rgb(0,153,1255)",
+        "textColor": "rgb(0,153,255)",
         "textSize": "14px",
         "innerShadowColor": "none"
     },
     "basicButtonHover": {
         "backgroundColor": "rgb(247,247,247)",
-        "borderColor": "rgb(0,153,1255)",
+        "borderColor": "rgb(0,153,255)",
         "borderSize": "1px",
         "borderType": "solid",
         "borderRadius": "4px",
-        "textColor": "rgb(0,153,1255)",
+        "textColor": "rgb(0,153,255)",
         "textSize": "14px",
         "innerShadowColor": "none"
     },
     "basicButtonActive": {
-        "backgroundColor": "rgb(0,153,1255)",
-        "borderColor": "rgb(0,153,1255)",
+        "backgroundColor": "rgb(0,153,255)",
+        "borderColor": "rgb(0,153,255)",
         "borderSize": "1px",
         "borderType": "solid",
         "borderRadius": "4px",
@@ -31,29 +31,29 @@
         "innerShadowColor": "#3769d9"
     },
     "seriesButtons": {
-        "buttonSize": "Big",
+        "buttonSize": "big",
         "backgroundColor": "rgb(255,255,255)",
-        "borderColor": "rgb(0,153,1255)",
+        "borderColor": "rgb(0,153,255)",
         "borderSize": "1px",
         "borderType": "solid",
         "borderRadius": "4px",
-        "textColor": "rgb(0,153,1255)",
+        "textColor": "rgb(0,153,255)",
         "textSize": "14px",
         "innerShadowColor": "none"
     },
     "seriesButtonsHover": {
         "backgroundColor": "rgb(247,247,247)",
-        "borderColor": "rgb(0,153,1255)",
+        "borderColor": "rgb(0,153,255)",
         "borderSize": "1px",
         "borderType": "solid",
         "borderRadius": "4px",
-        "textColor": "rgb(0,153,1255)",
+        "textColor": "rgb(0,153,255)",
         "textSize": "14px",
         "innerShadowColor": "none"
     },
     "seriesButtonsActive": {
-        "backgroundColor": "rgb(0,153,1255)",
-        "borderColor": "rgb(0,153,1255)",
+        "backgroundColor": "rgb(0,153,255)",
+        "borderColor": "rgb(0,153,255)",
         "borderSize": "1px",
         "borderType": "solid",
         "borderRadius": "4px",
@@ -64,55 +64,55 @@
     "radioButton": {
         "backgroundColor": "rgb(255,255,255)",
         "activeColor": "rgb(255,255,255)",
-        "borderColor": "rgb(0,153,1255)",
+        "borderColor": "rgb(0,153,255)",
         "borderSize": "1px",
         "borderType": "solid",
-        "textColor": "rgb(0,153,1255)",
+        "textColor": "rgb(0,153,255)",
         "textSize": "14px"
     },
     "radioButtonHover": {
         "backgroundColor": "rgb(247,247,247)",
         "activeColor": "rgb(247,247,247)",
-        "borderColor": "rgb(0,153,1255)",
+        "borderColor": "rgb(0,153,255)",
         "borderSize": "1px",
         "borderType": "solid",
-        "textColor": "rgb(0,153,1255)",
+        "textColor": "rgb(0,153,255)",
         "textSize": "14px"
     },
     "radioButtonActive": {
         "backgroundColor": "rgb(255,255,255)",
-        "activeColor": "rgb(0,153,1255)",
-        "borderColor": "rgb(0,153,1255)",
+        "activeColor": "rgb(0,153,255)",
+        "borderColor": "rgb(0,153,255)",
         "borderSize": "1px",
         "borderType": "solid",
-        "textColor": "rgb(0,153,1255)",
+        "textColor": "rgb(0,153,255)",
         "textSize": "14px"
     },
     "checkButton": {
         "backgroundColor": "rgb(255,255,255)",
         "activeColor": "rgb(255,255,255)",
-        "borderColor": "rgb(0,153,1255)",
+        "borderColor": "rgb(0,153,255)",
         "borderSize": "1px",
         "borderType": "solid",
-        "textColor": "rgb(0,153,1255)",
+        "textColor": "rgb(0,153,255)",
         "textSize": "14px"
     },
     "checkButtonHover": {
         "backgroundColor": "rgb(247,247,247)",
         "activeColor": "rgb(255,255,255)",
-        "borderColor": "rgb(0,153,1255)",
+        "borderColor": "rgb(0,153,255)",
         "borderSize": "1px",
         "borderType": "solid",
-        "textColor": "rgb(0,153,1255)",
+        "textColor": "rgb(0,153,255)",
         "textSize": "14px"
     },
     "checkButtonActive": {
-        "backgroundColor": "rgb(0,153,1255)",
+        "backgroundColor": "rgb(0,153,255)",
         "activeColor": "rgb(255,255,255)",
-        "borderColor": "rgb(0,153,1255)",
+        "borderColor": "rgb(0,153,255)",
         "borderSize": "1px",
         "borderType": "solid",
-        "textColor": "rgb(0,153,1255)",
+        "textColor": "rgb(0,153,255)",
         "textSize": "14px"
     }
 }
