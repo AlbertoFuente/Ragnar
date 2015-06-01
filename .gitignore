@@ -1,0 +1,5 @@
+node_modules/
+styles/styles.min.css
+styles/global.scss
+.sass-cache/
+js/
