@@ -15,8 +15,8 @@ gulp.task('default', function() {
         'components/divs.js',
         'components/buttons.js'
     ])
-        .pipe(concat('ragnar.min.js'))
         .pipe(babel())
+        .pipe(concat('ragnar.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('js/'));
 });
