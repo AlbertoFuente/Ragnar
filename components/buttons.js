@@ -4,7 +4,7 @@
      */
      'use strict';
 
-    var services = require("services");
+    import services from "./services";
 
     function AddBasicButton(data) {
 
@@ -101,7 +101,7 @@
                         self.buttonBox.style.mozBoxShadow = jsonData.basicButton.innerShadowColor;
                         self.buttonBox.style.webkitBoxShadow = jsonData.basicButton.innerShadowColor;
                         self.buttonBox.style.boxShadow = jsonData.basicButton.innerShadowColor;
-                    }
+                    };
                 }
             }
         }

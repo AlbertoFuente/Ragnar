@@ -19,4 +19,5 @@
 			req.send();
 		});
 	};
+    export getJsonData;
 }());
