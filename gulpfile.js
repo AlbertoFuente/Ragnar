@@ -12,14 +12,9 @@ var gulp = require('gulp'),
 gulp.task('default', function() {
 
     gulp.src([
-        'components/services.js',
         'components/buttons.js'
         ])
-        .pipe(transpile({
-            formatter: 'bundle'
-        }))
-        .pipe(concat('ragnar.min.js'))
-        .pipe(babel())
+        //.pipe(babel())
         .pipe(uglify())
         .pipe(gulp.dest('js/'));
 });
@@ -45,7 +40,6 @@ gulp.task('sass', function() {
 gulp.task('watch', function() {
 
     gulp.watch([
-        'components/services.js',
         'components/buttons.js',
         'examples/js/examples.js'
     ], function() {
