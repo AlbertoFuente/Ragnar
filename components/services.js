@@ -1,4 +1,4 @@
-define(function () {
+define('services', function () {
     'use strict';
 
     return {
