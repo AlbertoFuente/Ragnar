@@ -6,15 +6,16 @@ var gulp = require('gulp'),
     sassJson = require('gulp-json-sass'),
     sass = require('gulp-sass'),
     minifyCSS = require('gulp-minify-css'),
-    rename = require('gulp-rename'),
-    transpile = require('gulp-es6-module-transpiler');
+    rename = require('gulp-rename');
 
 gulp.task('default', function() {
 
     gulp.src([
+        'components/services.js',
         'components/buttons.js'
         ])
-        //.pipe(babel())
+        .pipe(concat('ragnar.min.js'))
+        .pipe(babel())
         .pipe(uglify())
         .pipe(gulp.dest('js/'));
 });
