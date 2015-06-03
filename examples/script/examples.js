@@ -1,4 +1,5 @@
 define('samples', ['jquery', 'services', 'buttons'], function ($, services, buttons) {
+    'use strict';
 
     return {
         init: function() {
@@ -16,50 +17,47 @@ define('samples', ['jquery', 'services', 'buttons'], function ($, services, butt
              * Implementing basic button
              */
 
-            var basicButtonObj = {};
+            function BasicButtonBig() {
+                this.parentElement = document.body;
+                this.type = "div";
+                this.buttonSize = "Big";
+                this.buttonId = "basicButton-1";
+                this.buttonClass = "basicButton";
+                this.buttonText = "Basic";
+                this.icon = true;
+                this.iconClass = "fa fa-bar-chart";
+                this.dropDown = false;
+                this.dropDownElements = {};
+            }
+
+            function BasicButtonNormal() {
+                BasicButtonBig.call(this);
+
+                this.buttonSize = "Normal";
+                this.buttonId = "basicButton-2";
+                this.iconClass = "fa fa-book";
+            }
+
+            function BasicButtonSmall() {
+                BasicButtonBig.call(this);
+
+                this.buttonSize = "Small";
+                this.buttonId = "basicButton-3";
+                this.iconClass = "fa fa-bars";
+                this.dropDownElements.element1 = "Option1";
+                this.dropDownElements.element2 = "Option2";
+                this.dropDownElements.element3 = "Option3";
+                this.dropDownElements.element4 = "Option4";
+            }
 
             // big button
-            basicButtonObj.parentElement = document.body;
-            basicButtonObj.type = "div";
-            basicButtonObj.buttonSize = "Big";
-            basicButtonObj.buttonId = "basicButton-1";
-            basicButtonObj.buttonClass = "basicButton";
-            basicButtonObj.buttonText = "Basic";
-            basicButtonObj.icon = true;
-            basicButtonObj.iconClass = "fa fa-bar-chart";
-            basicButtonObj.dropDown = false;
-            basicButtonObj.dropDownElements = {};
-            var basicButtonBig = buttons.addBasicButton(basicButtonObj);
+            var basicButtonBig = buttons.addBasicButton(new BasicButtonBig());
 
             // normal button
-            basicButtonObj.parentElement = document.body;
-            basicButtonObj.type = "div";
-            basicButtonObj.buttonSize = "Normal";
-            basicButtonObj.buttonId = "basicButton-2";
-            basicButtonObj.buttonClass = "basicButton";
-            basicButtonObj.buttonText = "Basic";
-            basicButtonObj.icon = true;
-            basicButtonObj.iconClass = "fa fa-book";
-            basicButtonObj.dropDown = false;
-            basicButtonObj.dropDownElements = {};
-            var basicButtonNormal = addBasicButton(basicButtonObj);
+            var basicButtonNormal = buttons.addBasicButton(new BasicButtonNormal());
 
             // small button
-            basicButtonObj.parentElement = document.body;
-            basicButtonObj.type = "div";
-            basicButtonObj.buttonSize = "Small";
-            basicButtonObj.buttonId = "basicButton-3";
-            basicButtonObj.buttonClass = "basicButton";
-            basicButtonObj.buttonText = "Basic";
-            basicButtonObj.icon = true;
-            basicButtonObj.iconClass = "fa fa-bars";
-            basicButtonObj.dropDown = true;
-            basicButtonObj.dropDownElements = {};
-            basicButtonObj.dropDownElements.element1 = "Option1";
-            basicButtonObj.dropDownElements.element2 = "Option2";
-            basicButtonObj.dropDownElements.element3 = "Option3";
-            basicButtonObj.dropDownElements.element4 = "Option4";
-            var basicButtonSmall = addBasicButton(basicButtonObj);
+            var basicButtonSmall = buttons.addBasicButton(new BasicButtonSmall());
 
 
             /**
@@ -76,56 +74,79 @@ define('samples', ['jquery', 'services', 'buttons'], function ($, services, butt
              * Implementing series buttons
              */
 
-            var seriesButtonsObj = {};
+             function SeriesButtons() {
+                 BasicButtonBig.call(this);
+                 this.seriesLength = 4;
+                 this.buttons = {
+                     button1: {},
+                     button2: {},
+                     button3: {},
+                     button4: {}
+                 };
+             }
 
-            seriesButtonsObj.seriesLength = 4;
-            seriesButtonsObj.buttonSize = "Big";
-            seriesButtonsObj.type = "div";
-            seriesButtonsObj.parentElement = document.body;
-            seriesButtonsObj.buttons = {};
-            seriesButtonsObj.buttons.button1 = {};
-            seriesButtonsObj.buttons.button2 = {};
-            seriesButtonsObj.buttons.button3 = {};
-            seriesButtonsObj.buttons.button4 = {};
+             function SeriesButtons1() {
+                 SeriesButtons.call(this);
+                 this.buttons.button1 = {
+                     buttonId : "seriesButton-1",
+                     buttonClass : "seriesButton",
+                     buttonText : "First",
+                     icon : false,
+                     iconClass : "",
+                     dropDown : false
+                 };
+             }
 
-            // First button
-            seriesButtonsObj.buttons.button1.buttonId = "seriesButton-1";
-            seriesButtonsObj.buttons.button1.buttonClass = "seriesButton";
-            seriesButtonsObj.buttons.button1.buttonText = "First";
-            seriesButtonsObj.buttons.button1.icon = false;
-            seriesButtonsObj.buttons.button1.iconClass = "";
-            seriesButtonsObj.buttons.button1.dropDown = false;
+             function SeriesButtons2() {
+                 SeriesButtons.call(this);
+                 this.buttons.button2 = {
+                     buttonId : "seriesButton-2",
+                     buttonClass : "seriesButton",
+                     buttonText : "Second",
+                     icon : false,
+                     iconClass : "",
+                     dropDown : false
+                 };
+             }
 
-            // Second button
-            seriesButtonsObj.buttons.button2.buttonId = "seriesButton-2";
-            seriesButtonsObj.buttons.button2.buttonClass = "seriesButton";
-            seriesButtonsObj.buttons.button2.buttonText = "Second";
-            seriesButtonsObj.buttons.button2.icon = false;
-            seriesButtonsObj.buttons.button2.iconClass = "";
-            seriesButtonsObj.buttons.button2.dropDown = false;
+             function SeriesButtons3() {
+                 SeriesButtons.call(this);
+                 this.buttons.button3 = {
+                     buttonId : "seriesButton-3",
+                     buttonClass : "seriesButton",
+                     buttonText : "Third",
+                     icon : false,
+                     iconClass : "",
+                     dropDown : false
+                 };
+             }
 
-            // First button
-            seriesButtonsObj.buttons.button3.buttonId = "seriesButton-3";
-            seriesButtonsObj.buttons.button3.buttonClass = "seriesButton";
-            seriesButtonsObj.buttons.button3.buttonText = "Third";
-            seriesButtonsObj.buttons.button3.icon = false;
-            seriesButtonsObj.buttons.button3.iconClass = "";
-            seriesButtonsObj.buttons.button3.dropDown = false;
+             function SeriesButtons4() {
+                 SeriesButtons.call(this);
+                 this.buttons.button4 = {
+                     buttonId : "seriesButton-4",
+                     buttonClass : "seriesButton",
+                     buttonText : "Fourth",
+                     icon : false,
+                     iconClass : "fa fa-bars",
+                     dropDown : false,
+                     dropDownElements : {
+                         element1 : "Option1",
+                         element2 : "Option2",
+                         element3 : "Option3",
+                         element4 : "Option4"
+                     }
+                 };
+             }
 
-            // First button
-            seriesButtonsObj.buttons.button4.buttonId = "seriesButton-4";
-            seriesButtonsObj.buttons.button4.buttonClass = "seriesButton";
-            seriesButtonsObj.buttons.button4.buttonText = "Fourth";
-            seriesButtonsObj.buttons.button4.icon = true;
-            seriesButtonsObj.buttons.button4.iconClass = "fa fa-bars";
-            seriesButtonsObj.buttons.button4.dropDown = true;
-            seriesButtonsObj.buttons.button4.dropDownElements = {};
-            seriesButtonsObj.buttons.button4.dropDownElements.element1 = "Option1";
-            seriesButtonsObj.buttons.button4.dropDownElements.element2 = "Option2";
-            seriesButtonsObj.buttons.button4.dropDownElements.element3 = "Option3";
-            seriesButtonsObj.buttons.button4.dropDownElements.element4 = "Option4";
+             function AllSeriesButtons() {
+                 SeriesButtons1.call(this);
+                 SeriesButtons2.call(this);
+                 SeriesButtons3.call(this);
+                 SeriesButtons4.call(this);
+             }
 
-            addSeriesButtons(seriesButtonsObj);
+            var seriesButton = buttons.addSeriesButtons(new AllSeriesButtons());
 
 
             /**
@@ -138,13 +159,13 @@ define('samples', ['jquery', 'services', 'buttons'], function ($, services, butt
             radioButtonTextContainer.appendChild(radioButtonTitleText);
             document.body.appendChild(radioButtonTextContainer);
 
-            var radioButton = {};
+            function RadioButtons() {
+                this.label = true;
+                this.labelText = "Radio Button";
+                this.parentElement = document.body;
+            }
 
-            radioButton.label = true;
-            radioButton.labelText = "Radio Button";
-            radioButton.parentElement = document.body;
-
-            addRadioButton(radioButton);
+            var radioButtons = buttons.addRadioButton(new RadioButtons());
 
 
             /**
@@ -157,14 +178,14 @@ define('samples', ['jquery', 'services', 'buttons'], function ($, services, butt
             checkButtonTextContainer.appendChild(checkButtonTitleText);
             document.body.appendChild(checkButtonTextContainer);
 
-            var checkButton = {};
+            function CheckButtons() {
+                this.label = true;
+                this.labelText = "Check Box Button";
+                this.parentElement = document.body;
+            }
 
-            checkButton.label = true;
-            checkButton.labelText = "Check Box Button";
-            checkButton.parentElement = document.body;
-
-            addCheckButton(checkButton);
+            var checkButton = buttons.addCheckButton(new CheckButtons());
 
         }
-    }
+    };
 });
