@@ -6,8 +6,8 @@ define('buttons', function () {
 
      return {
 
-         getJsonData: function() {
-             var services = require('services'),
+         getJsonData: () => {
+             let services = require('services'),
                  data = [],
                  jsonData = services.getJsonData('../JSON/global.json').then((response) => {
                      data.push(response);
@@ -17,101 +17,102 @@ define('buttons', function () {
             return data;
          },
 
-         addBasicButton: function(data) {
+         addBasicButton: (data) => {
              var self = this,
-                jsonData = this.getJsonData();
+                jsonData = this.getJsonData(),
+                basicButton = null;
 
              if (data !== undefined && jsonData !== undefined) {
 
-                 this.parent = data.parentElement;
-                 this.type = data.type;
-                 this.buttonId = data.buttonId;
-                 this.buttonClass = data.buttonClass;
-                 this.buttonText = data.buttonText;
+                 basicButton.parent = data.parentElement;
+                 basicButton.type = data.type;
+                 basicButton.buttonId = data.buttonId;
+                 basicButton.buttonClass = data.buttonClass;
+                 basicButton.buttonText = data.buttonText;
 
                  // Styles
-                 this.backgroundColor = jsonData.basicButton.backgroundColor;
-                 this.borderColor = jsonData.basicButton.borderColor;
-                 this.borderSize = jsonData.basicButton.borderSize;
-                 this.borderType = jsonData.basicButton.borderType;
-                 this.borderRadius = jsonData.basicButton.borderRadius;
-                 this.textColor = jsonData.basicButton.textColor;
-                 this.textSize = jsonData.basicButton.textSize;
-                 this.icon = data.icon;
-                 this.iconClass = data.iconClass;
-                 this.dropDown = data.dropDown;
-                 this.dropDownElements = data.dropDownElements;
+                 basicButton.backgroundColor = jsonData.basicButton.backgroundColor;
+                 basicButton.borderColor = jsonData.basicButton.borderColor;
+                 basicButton.borderSize = jsonData.basicButton.borderSize;
+                 basicButton.borderType = jsonData.basicButton.borderType;
+                 basicButton.borderRadius = jsonData.basicButton.borderRadius;
+                 basicButton.textColor = jsonData.basicButton.textColor;
+                 basicButton.textSize = jsonData.basicButton.textSize;
+                 basicButton.icon = data.icon;
+                 basicButton.iconClass = data.iconClass;
+                 basicButton.dropDown = data.dropDown;
+                 basicButton.dropDownElements = data.dropDownElements;
 
-                 if (this.icon) {
-                     this.buttonBox = document.createElement("div");
-                     this.buttonBox.id = self.buttonId;
+                 if (basicButton.icon) {
+                     basicButton.buttonBox = document.createElement("div");
+                     basicButton.buttonBox.id = self.buttonId;
 
-                     this.iconCont = document.createElement('li');
-                     this.iconCont.className = this.iconClass + " iconBasicButton";
+                     basicButton.iconCont = document.createElement('li');
+                     basicButton.iconCont.className = basicButton.iconClass + " iconBasicButton";
 
-                     this.buttonText = document.createTextNode(self.buttonText);
+                     basicButton.buttonText = document.createTextNode(self.buttonText);
 
-                     this.buttonBox.appendChild(self.iconCont);
-                     this.buttonBox.appendChild(self.buttonText);
-                     this.parent.appendChild(self.buttonBox);
+                     basicButton.buttonBox.appendChild(self.iconCont);
+                     basicButton.buttonBox.appendChild(self.buttonText);
+                     basicButton.parent.appendChild(self.buttonBox);
                  } else {
-                     this.buttonBox = document.createElement("div");
-                     this.buttonBox.id = self.buttonId;
+                     basicButton.buttonBox = document.createElement("div");
+                     basicButton.buttonBox.id = self.buttonId;
 
-                     this.buttonText = document.createTextNode(self.buttonText);
+                     basicButton.buttonText = document.createTextNode(self.buttonText);
 
-                     this.buttonBox.appendChild(self.buttonText);
-                     this.parent.appendChild(self.buttonBox);
+                     basicButton.buttonBox.appendChild(self.buttonText);
+                     basicButton.parent.appendChild(self.buttonBox);
                  }
 
-                 if (this.dropDown) {
-                     this.dropDownContainer = document.createElement('div');
-                     this.dropDownContainer.className = "dropDownContainer";
+                 if (basicButton.dropDown) {
+                     basicButton.dropDownContainer = document.createElement('div');
+                     basicButton.dropDownContainer.className = "dropDownContainer";
 
                      setTimeout(function () {
-                         self.parentPosition = self.buttonBox.getBoundingClientRect();
-                         self.parentPositionLeft = self.parentPosition.left;
-                         self.parentPositionTop = self.parentPosition.top;
-                         self.parentPositionWidth = self.parentPosition.width;
-                         self.parentPositionHeight = self.parentPosition.height;
+                         basicButton.parentPosition = basicButton.buttonBox.getBoundingClientRect();
+                         basicButton.parentPositionLeft = basicButton.parentPosition.left;
+                         basicButton.parentPositionTop = basicButton.parentPosition.top;
+                         basicButton.parentPositionWidth = basicButton.parentPosition.width;
+                         basicButton.parentPositionHeight = basicButton.parentPosition.height;
 
-                         self.dropDownContainer.style.position = "absolute";
-                         self.dropDownContainer.style.display = "none";
-                         self.dropDownContainer.style.left = self.parentPositionLeft + "px";
-                         self.dropDownContainer.style.top = (self.parentPositionTop + self.parentPositionHeight + 3) + "px";
-                         self.dropDownContainer.style.minWidth = self.parentPositionWidth + "px";
-                         self.dropDownContainer.style.width = "auto";
-                         self.dropDownContainer.style.height = "auto";
-                         self.dropDownContainer.style.background = self.backgroundColor;
-                         self.dropDownContainer.style.border = self.borderSize + " " + self.borderType + " " + self.borderColor;
-                         self.dropDownContainer.style.borderRadius = self.borderRadius;
+                         basicButton.dropDownContainer.style.position = "absolute";
+                         basicButton.dropDownContainer.style.display = "none";
+                         basicButton.dropDownContainer.style.left = basicButton.parentPositionLeft + "px";
+                         basicButton.dropDownContainer.style.top = (basicButton.parentPositionTop + basicButton.parentPositionHeight + 3) + "px";
+                         basicButton.dropDownContainer.style.minWidth = basicButton.parentPositionWidth + "px";
+                         basicButton.dropDownContainer.style.width = "auto";
+                         basicButton.dropDownContainer.style.height = "auto";
+                         basicButton.dropDownContainer.style.background = basicButton.backgroundColor;
+                         basicButton.dropDownContainer.style.border = basicButton.borderSize + " " + basicButton.borderType + " " + basicButton.borderColor;
+                         basicButton.dropDownContainer.style.borderRadius = basicButton.borderRadius;
                      }, 100);
 
-                     Object.keys(this.dropDownElements).forEach(function(opt) {
-                         self.options = self.dropDownElements[opt];
+                     Object.keys(basicButton.dropDownElements).forEach(function(opt) {
+                         basicButton.options = basicButton.dropDownElements[opt];
 
-                         self.createOption = document.createElement('div');
-                         self.createOption.className = "dropDownOption";
+                         basicButton.createOption = document.createElement('div');
+                         basicButton.createOption.className = "dropDownOption";
 
-                         self.createOptionLabel = document.createTextNode(self.options);
-                         self.createOption.appendChild(self.createOptionLabel);
-                         self.dropDownContainer.appendChild(self.createOption);
-                         self.parent.appendChild(self.dropDownContainer);
+                         basicButton.createOptionLabel = document.createTextNode(basicButton.options);
+                         basicButton.createOption.appendChild(basicButton.createOptionLabel);
+                         basicButton.dropDownContainer.appendChild(basicButton.createOption);
+                         basicButton.parent.appendChild(basicButton.dropDownContainer);
 
-                         self.createOption.onclick = function () {
-                             self.dropDownContainer.style.display = "none";
+                         basicButton.createOption.onclick = function () {
+                             basicButton.dropDownContainer.style.display = "none";
 
-                             self.buttonBox.style.color = jsonData.basicButton.textColor;
-                             self.buttonBox.style.background = jsonData.basicButton.backgroundColor;
-                             self.buttonBox.style.mozBoxShadow = jsonData.basicButton.innerShadowColor;
-                             self.buttonBox.style.webkitBoxShadow = jsonData.basicButton.innerShadowColor;
-                             self.buttonBox.style.boxShadow = jsonData.basicButton.innerShadowColor;
+                             basicButton.buttonBox.style.color = jsonData.basicButton.textColor;
+                             basicButton.buttonBox.style.background = jsonData.basicButton.backgroundColor;
+                             basicButton.buttonBox.style.mozBoxShadow = jsonData.basicButton.innerShadowColor;
+                             basicButton.buttonBox.style.webkitBoxShadow = jsonData.basicButton.innerShadowColor;
+                             basicButton.buttonBox.style.boxShadow = jsonData.basicButton.innerShadowColor;
                          };
                      });
                  }
              }
 
-             this.buttonBox.onclick = function () {
+             basicButton.buttonBox.onclick = function () {
                  var next = this.nextSibling;
 
                  if (next.className === "dropDownContainer") {
@@ -134,11 +135,11 @@ define('buttons', function () {
              };
 
              if (data.buttonSize === "Big") {
-                 self.buttonBox.className = self.buttonClass + " basicButtonBig";
+                 basicButton.buttonBox.className = basicButton.buttonClass + " basicButtonBig";
              } else if (data.buttonSize === "Normal") {
-                 self.buttonBox.className = self.buttonClass + " basicButtonNormal";
+                 basicButton.buttonBox.className = basicButton.buttonClass + " basicButtonNormal";
              } else {
-                 self.buttonBox.className = self.buttonClass + " basicButtonSmall";
+                 basicButton.buttonBox.className = basicButton.buttonClass + " basicButtonSmall";
              }
          },
 
