@@ -1,21 +1,27 @@
-define(['jquery', './services'], function ($, services) {
+define('buttons', function () {
     /**
      * Buttons components
      */
      'use strict';
 
-     return  {
+     return {
+
+         getJsonData: function() {
+             var services = require('services'),
+                 data = [],
+                 jsonData = services.getJsonData('../JSON/global.json').then((response) => {
+                     data.push(response);
+                 }, (error) => {
+                     throw new Error ('there is a problem with the json data: ' + error);
+                 });
+            return data;
+         },
+
          addBasicButton: function(data) {
              var self = this,
-                 services = require('services'),
-                 jsonData = services.getJsonData('../JSON/global.json').then(function(response) {
-                     return response;
-                 }, function(error) {
-                     throw new Error ('there is a problem with the json data');
-                 }),
-                 opt = '';
+                jsonData = this.getJsonData();
 
-             if (data !== undefined) {
+             if (data !== undefined && jsonData !== undefined) {
 
                  this.parent = data.parentElement;
                  this.type = data.type;
