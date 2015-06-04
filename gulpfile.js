@@ -11,29 +11,29 @@ var gulp = require('gulp'),
 gulp.task('default', function() {
 
     gulp.src([
-        'components/services.js',
-        'components/buttons.js'
+            'components/services.js',
+            'components/buttons.js',
+            'components/components.js'
         ])
-        .pipe(concat('ragnar.min.js'))
         .pipe(babel())
-        .pipe(uglify())
+        //.pipe(uglify())
         .pipe(gulp.dest('js/'));
 });
 
 gulp.task('minSass', function() {
     gulp.src('styles/styles.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(minifyCSS({
-        keepBreaks: true
-    }))
-    .pipe(rename('styles.min.css'))
-    .pipe(gulp.dest('styles'));
+        .pipe(sass().on('error', sass.logError))
+        .pipe(minifyCSS({
+            keepBreaks: true
+        }))
+        .pipe(rename('styles.min.css'))
+        .pipe(gulp.dest('styles'));
 });
 
 gulp.task('sass', function() {
     gulp.src(['JSON/global.json', 'global.scss'])
         .pipe(sassJson({
-          sass: false
+            sass: false
         }))
         .pipe(gulp.dest('styles'));
 });
@@ -41,6 +41,7 @@ gulp.task('sass', function() {
 gulp.task('watch', function() {
 
     gulp.watch([
+        'components/components.js',
         'components/buttons.js',
         'examples/js/examples.js'
     ], function() {
@@ -53,7 +54,7 @@ gulp.task('watch', function() {
     ], function() {
         try {
             gulp.start('sass');
-        } catch(err) {
+        } catch (err) {
             console.log(err);
         } finally {
             gulp.start('minSass');
