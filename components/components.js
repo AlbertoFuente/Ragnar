@@ -2,30 +2,21 @@ define('components', ['services', 'buttons'], function(services, buttons) {
     'use strict';
 
     return {
-        getData: function() {
-            let json = [],
-                url = '../json/global.json';
-            try {
-                services.getJsonData(url).then((response) => {
-                    json = JSON.parse(response);
-                }, (error) => {
-                    throw new Error('there is a problem with the json data: ' + error);
-                });
-            } catch (err) {
-                console.log(err.message);
-            } finally {
-                if (json.length === 0) {
-                    services.getJsonData(url).then((response) => {
-                        json = JSON.parse(response);
-                    }, (error) => {
-                        throw new Error('there is a problem with the json data: ' + error);
-                    });
+        jsonData: [],
+        getData: function(url) {
+            services.getJsonData(url).then((response) => {
+                this.jsonData.push(JSON.parse(response));
+                if (this.jsonData.length > 0) {
+                    this.start(this.jsonData);
                 }
-            }
-            return json;
+            }, (error) => {
+                throw new Error('there is a problem with the json data: ' + error);
+            });
         },
         init: function() {
-            var json = this.getData();
+            this.getData('../json/global.json');
+        },
+        start: function(json) {
             console.log(json);
         }
     };
