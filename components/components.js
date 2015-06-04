@@ -1,14 +1,12 @@
-define('components', ['services', 'buttons'], function(services, buttons) {
+define('components', ['jquery', 'services', 'buttons', 'samples'], function($, services, buttons, samples) {
     'use strict';
 
     return {
-        jsonData: [],
+        jsonData: {},
         getData: function(url) {
             services.getJsonData(url).then((response) => {
-                this.jsonData.push(JSON.parse(response));
-                if (this.jsonData.length > 0) {
-                    this.start(this.jsonData);
-                }
+                this.jsonData = JSON.parse(response);
+                this.start(this.jsonData);
             }, (error) => {
                 throw new Error('there is a problem with the json data: ' + error);
             });
@@ -17,7 +15,7 @@ define('components', ['services', 'buttons'], function(services, buttons) {
             this.getData('../json/global.json');
         },
         start: function(json) {
-            console.log(json);
+            samples.init(buttons, json);
         }
     };
 });
