@@ -43,6 +43,7 @@ gulp.task('watch', function() {
     gulp.watch([
         'components/components.js',
         'components/buttons.js',
+        'components/services.js',
         'examples/js/examples.js'
     ], function() {
         gulp.start('default');
