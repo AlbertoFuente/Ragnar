@@ -79,73 +79,51 @@ define('samples', function() {
             function SeriesButtons() {
                 BasicButtonBig.call(this);
                 this.seriesLength = 4;
-                this.buttons = {
-                    button1: {},
-                    button2: {},
-                    button3: {},
-                    button4: {}
-                };
-            }
-
-            function SeriesButtons1() {
-                SeriesButtons.call(this);
-                this.buttons.button1 = {
-                    buttonId: "seriesButton-1",
-                    buttonClass: "seriesButton",
-                    buttonText: "First",
-                    icon: false,
-                    iconClass: "",
-                    dropDown: false
-                };
-            }
-
-            function SeriesButtons2() {
-                SeriesButtons.call(this);
-                this.buttons.button2 = {
-                    buttonId: "seriesButton-2",
-                    buttonClass: "seriesButton",
-                    buttonText: "Second",
-                    icon: false,
-                    iconClass: "",
-                    dropDown: false
-                };
-            }
-
-            function SeriesButtons3() {
-                SeriesButtons.call(this);
-                this.buttons.button3 = {
-                    buttonId: "seriesButton-3",
-                    buttonClass: "seriesButton",
-                    buttonText: "Third",
-                    icon: false,
-                    iconClass: "",
-                    dropDown: false
-                };
-            }
-
-            function SeriesButtons4() {
-                SeriesButtons.call(this);
-                this.buttons.button4 = {
-                    buttonId: "seriesButton-4",
-                    buttonClass: "seriesButton",
-                    buttonText: "Fourth",
-                    icon: false,
-                    iconClass: "fa fa-bars",
-                    dropDown: false,
-                    dropDownElements: {
-                        element1: "Option1",
-                        element2: "Option2",
-                        element3: "Option3",
-                        element4: "Option4"
-                    }
-                };
+                this.buttons = {};
             }
 
             function AllSeriesButtons() {
-                SeriesButtons1.call(this);
-                SeriesButtons2.call(this);
-                SeriesButtons3.call(this);
-                SeriesButtons4.call(this);
+                SeriesButtons.call(this);
+                this.buttons = {
+                    button1: {
+                        buttonId: "seriesButton-1",
+                        buttonClass: "seriesButton",
+                        buttonText: "First",
+                        icon: false,
+                        iconClass: "",
+                        dropDown: false
+                    },
+                    button2: {
+                        buttonId: "seriesButton-2",
+                        buttonClass: "seriesButton",
+                        buttonText: "Second",
+                        icon: false,
+                        iconClass: "",
+                        dropDown: false
+                    },
+                    button3: {
+                        buttonId: "seriesButton-3",
+                        buttonClass: "seriesButton",
+                        buttonText: "Third",
+                        icon: false,
+                        iconClass: "",
+                        dropDown: false
+                    },
+                    button4: {
+                        buttonId: "seriesButton-4",
+                        buttonClass: "seriesButton",
+                        buttonText: "Fourth",
+                        icon: true,
+                        iconClass: "fa fa-bars",
+                        dropDown: true,
+                        dropDownElements: {
+                            element1: "Option1",
+                            element2: "Option2",
+                            element3: "Option3",
+                            element4: "Option4"
+                        }
+                    }
+                };
             }
 
             var seriesButton = buttons.addSeriesButtons(new AllSeriesButtons(), jsonData);
