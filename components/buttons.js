@@ -177,7 +177,7 @@ define('buttons', function() {
                         seriesButtons.divButton.appendChild(seriesButtons.icon);
                         seriesButtons.divButton.appendChild(seriesButtons.textButton);
                         seriesButtons.buttonsContainer.appendChild(seriesButtons.divButton);
-                        seriesButtons.parent.appendChild(seriesButtons.buttonsContainer);
+                        seriesButtons.parentS.appendChild(seriesButtons.buttonsContainer);
                     } else {
                         seriesButtons.textButton = document.createTextNode(seriesButtons.button.buttonText);
 
@@ -191,7 +191,7 @@ define('buttons', function() {
 
                         seriesButtons.divButton.appendChild(seriesButtons.textButton);
                         seriesButtons.buttonsContainer.appendChild(seriesButtons.divButton);
-                        seriesButtons.parent.appendChild(seriesButtons.buttonsContainer);
+                        seriesButtons.parentS.appendChild(seriesButtons.buttonsContainer);
                     }
 
                     if (seriesButtons.divButton.dropDown) {
@@ -209,7 +209,7 @@ define('buttons', function() {
                             seriesButtons.dropDownContainerSeries.style.position = "absolute";
                             seriesButtons.dropDownContainerSeries.style.display = "none";
                             seriesButtons.dropDownContainerSeries.style.left = seriesButtons.parentPositionLeftS + "px";
-                            seriesButtons.dropDownContainerSeries.style.top = (seriesButtons.parentPositionTopS + seriesButtons.parentPositionHeight + 3) + "px";
+                            seriesButtons.dropDownContainerSeries.style.top = (seriesButtons.parentPositionTopS + seriesButtons.parentPositionHeight + 10) + "px";
                             seriesButtons.dropDownContainerSeries.style.minWidth = seriesButtons.parentPositionWidthS + "px";
                             seriesButtons.dropDownContainerSeries.style.width = "auto";
                             seriesButtons.dropDownContainerSeries.style.height = "auto";
@@ -243,23 +243,23 @@ define('buttons', function() {
                 });
 
                 seriesButtons.divButton.onclick = function() {
-                    var next = seriesButtons.parentNode.nextSibling;
+                    var next = this.parentNode.nextSibling;
 
                     if (next.className === "dropDownContainerSeriesButtons") {
                         if (seriesButtons.dropDownContainerSeries.style.display === "none") {
                             seriesButtons.dropDownContainerSeries.style.display = "block";
-                            seriesButtons.style.color = jsonData.seriesButtonsActive.textColor;
-                            seriesButtons.style.background = jsonData.seriesButtonsActive.backgroundColor;
-                            seriesButtons.style.mozBoxShadow = "inset 0 0 10px " + jsonData.seriesButtonsActive.innerShadowColor;
-                            seriesButtons.style.webkitBoxShadow = "inset 0 0 10px " + jsonData.seriesButtonsActive.innerShadowColor;
-                            seriesButtons.style.boxShadow = "inset 0 0 10px " + jsonData.seriesButtonsActive.innerShadowColor;
+                            this.style.color = jsonData.seriesButtonsActive.textColor;
+                            this.style.background = jsonData.seriesButtonsActive.backgroundColor;
+                            this.style.mozBoxShadow = "inset 0 0 10px " + jsonData.seriesButtonsActive.innerShadowColor;
+                            this.style.webkitBoxShadow = "inset 0 0 10px " + jsonData.seriesButtonsActive.innerShadowColor;
+                            this.style.boxShadow = "inset 0 0 10px " + jsonData.seriesButtonsActive.innerShadowColor;
                         } else {
-                            seriesButtons.dropDownContainerSeries.style.display = "none";
-                            seriesButtons.style.color = jsonData.seriesButtons.textColor;
-                            seriesButtons.style.background = jsonData.seriesButtons.backgroundColor;
-                            seriesButtons.style.mozBoxShadow = jsonData.seriesButtons.innerShadowColor;
-                            seriesButtons.style.webkitBoxShadow = jsonData.seriesButtons.innerShadowColor;
-                            seriesButtons.style.boxShadow = jsonData.seriesButtons.innerShadowColor;
+                            this.dropDownContainerSeries.style.display = "none";
+                            this.style.color = jsonData.seriesButtons.textColor;
+                            this.style.background = jsonData.seriesButtons.backgroundColor;
+                            this.style.mozBoxShadow = jsonData.seriesButtons.innerShadowColor;
+                            this.style.webkitBoxShadow = jsonData.seriesButtons.innerShadowColor;
+                            this.style.boxShadow = jsonData.seriesButtons.innerShadowColor;
                         }
                     }
                 };
