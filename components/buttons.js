@@ -209,7 +209,7 @@ define('buttons', function() {
                             seriesButtons.dropDownContainerSeries.style.position = "absolute";
                             seriesButtons.dropDownContainerSeries.style.display = "none";
                             seriesButtons.dropDownContainerSeries.style.left = seriesButtons.parentPositionLeftS + "px";
-                            seriesButtons.dropDownContainerSeries.style.top = (seriesButtons.parentPositionTopS + seriesButtons.parentPositionHeight + 3) + "px";
+                            seriesButtons.dropDownContainerSeries.style.top = (seriesButtons.parentPositionTopS + seriesButtons.parentPositionHeightS + 3) + "px";
                             seriesButtons.dropDownContainerSeries.style.minWidth = seriesButtons.parentPositionWidthS + "px";
                             seriesButtons.dropDownContainerSeries.style.width = "auto";
                             seriesButtons.dropDownContainerSeries.style.height = "auto";
