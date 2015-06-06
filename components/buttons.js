@@ -254,7 +254,7 @@ define('buttons', function() {
                             this.style.webkitBoxShadow = "inset 0 0 10px " + jsonData.seriesButtonsActive.innerShadowColor;
                             this.style.boxShadow = "inset 0 0 10px " + jsonData.seriesButtonsActive.innerShadowColor;
                         } else {
-                            this.dropDownContainerSeries.style.display = "none";
+                            seriesButtons.dropDownContainerSeries.style.display = "none";
                             this.style.color = jsonData.seriesButtons.textColor;
                             this.style.background = jsonData.seriesButtons.backgroundColor;
                             this.style.mozBoxShadow = jsonData.seriesButtons.innerShadowColor;
@@ -271,40 +271,43 @@ define('buttons', function() {
 
             if (data !== undefined) {
 
-                this.parent = data.parentElement;
-                this.label = data.label;
-                this.labelText = data.labelText;
+                let radioButton = {
+                    parent: data.parentElement,
+                    label: data.label,
+                    labelText: data.labelText
+                };
 
-                this.radioButtonContainer = document.createElement('div');
-                this.radioButtonContainer.className = "radioButtonContainer";
+                radioButton.radioButtonContainer = document.createElement('div');
+                radioButton.radioButtonContainer.className = "radioButtonContainer";
 
-                this.radioButton = document.createElement('div');
-                this.radioButton.className = "radioButton";
+                radioButton.radioButton = document.createElement('div');
+                radioButton.radioButton.className = "radioButton";
 
-                this.radioButtonActive = document.createElement('div');
-                this.radioButtonActive.className = "radioButtonActive";
+                radioButton.radioButtonActive = document.createElement('div');
+                radioButton.radioButtonActive.className = "radioButtonActive";
 
-                if (this.label) {
-                    this.labelRadioButtonContainer = document.createElement('div');
-                    this.labelRadioButtonContainer.className = "labelRadioButtonContainer";
+                if (radioButton.label) {
+                    radioButton.labelRadioButtonContainer = document.createElement('div');
+                    radioButton.labelRadioButtonContainer.className = "labelRadioButtonContainer";
 
-                    this.labelRadioButton = document.createTextNode(this.labelText);
+                    radioButton.labelRadioButton = document.createTextNode(radioButton.labelText);
 
-                    this.labelRadioButtonContainer.appendChild(this.labelRadioButton);
+                    radioButton.labelRadioButtonContainer.appendChild(radioButton.labelRadioButton);
                 }
 
-                this.radioButton.appendChild(this.radioButtonActive);
-                this.radioButtonContainer.appendChild(this.radioButton);
-                this.radioButtonContainer.appendChild(this.labelRadioButtonContainer);
-                this.parent.appendChild(this.radioButtonContainer);
+                radioButton.radioButton.appendChild(radioButton.radioButtonActive);
+                radioButton.radioButtonContainer.appendChild(radioButton.radioButton);
+                radioButton.radioButtonContainer.appendChild(radioButton.labelRadioButtonContainer);
+                radioButton.parent.appendChild(radioButton.radioButtonContainer);
 
-                this.radioButtonActive.onclick = function() {
+                radioButton.radioButtonActive.onclick = function() {
                     if (this.className === "radioButtonActive") {
                         this.className = "radioButtonActive Active";
                     } else {
                         this.className = "radioButtonActive";
                     }
                 };
+                return radioButton;
             }
         },
 
@@ -312,36 +315,39 @@ define('buttons', function() {
 
             if (data !== undefined) {
 
-                this.parent = data.parentElement;
-                this.label = data.label;
-                this.labelText = data.labelText;
+                let checkButton = {
+                    parent: data.parentElement,
+                    label: data.label,
+                    labelText: data.labelText
+                };
 
-                this.checkButtonContainer = document.createElement('div');
-                this.checkButtonContainer.className = "checkButtonContainer";
+                checkButton.checkButtonContainer = document.createElement('div');
+                checkButton.checkButtonContainer.className = "checkButtonContainer";
 
-                this.checkButton = document.createElement('div');
-                this.checkButton.className = "checkButton fa fa-check";
+                checkButton.checkButton = document.createElement('div');
+                checkButton.checkButton.className = "checkButton fa fa-check";
 
-                if (this.label) {
-                    this.labelCheckButtonContainer = document.createElement('div');
-                    this.labelCheckButtonContainer.className = "labelCheckButtonContainer";
+                if (checkButton.label) {
+                    checkButton.labelCheckButtonContainer = document.createElement('div');
+                    checkButton.labelCheckButtonContainer.className = "labelCheckButtonContainer";
 
-                    this.labelCheckButton = document.createTextNode(this.labelText);
+                    checkButton.labelCheckButton = document.createTextNode(checkButton.labelText);
 
-                    this.labelCheckButtonContainer.appendChild(this.labelCheckButton);
+                    checkButton.labelCheckButtonContainer.appendChild(checkButton.labelCheckButton);
                 }
 
-                this.checkButtonContainer.appendChild(this.checkButton);
-                this.checkButtonContainer.appendChild(this.labelCheckButtonContainer);
-                this.parent.appendChild(this.checkButtonContainer);
+                checkButton.checkButtonContainer.appendChild(checkButton.checkButton);
+                checkButton.checkButtonContainer.appendChild(checkButton.labelCheckButtonContainer);
+                checkButton.parent.appendChild(checkButton.checkButtonContainer);
 
-                this.checkButton.onclick = function() {
+                checkButton.checkButton.onclick = function() {
                     if (this.className === "checkButton fa fa-check") {
                         this.className = "checkButton fa fa-check Active";
                     } else {
                         this.className = "checkButton fa fa-check";
                     }
                 };
+                return checkButton;
             }
         }
     };
