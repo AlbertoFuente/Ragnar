@@ -379,16 +379,17 @@ $radioButtonTextSizeActive: $radioButtonActive-textSize;
 .radioButtonContainer {
   width: auto;
   height: auto;
+  cursor: pointer;
   .radioButton {
     width: 16px;
-    height: 15px;
+    height: 14px;
     @include radio-button-border-radius(100px);
     border: $radioButtonBorderSize $radioButtonBorderType $radioButtonBorderColor;
     float: left;
     margin-right: 8px;
     text-align: center;
     background: $radioButtonBackground;
-    padding-top: 3px;
+    padding-top: 2.2px;
     .radioButtonActive {
       width: 12px;
       height: 12px;
@@ -457,6 +458,7 @@ $checkButtonTextSizeActive: $checkButtonActive-textSize;
 .checkButtonContainer {
   width: auto;
   height: auto;
+  cursor: pointer;
   .checkButton {
     width: 19px;
     height: 18px;
