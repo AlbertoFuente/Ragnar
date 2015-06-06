@@ -125,7 +125,6 @@ define('buttons', function() {
                 } else {
                     basicButton.buttonBox.className = basicButton.buttonClass + " basicButtonSmall";
                 }
-                return basicButton;
             }
         },
 
@@ -263,7 +262,6 @@ define('buttons', function() {
                         }
                     }
                 };
-                return seriesButtons;
             }
         },
 
@@ -307,7 +305,6 @@ define('buttons', function() {
                         this.className = "radioButtonActive";
                     }
                 };
-                return radioButton;
             }
         },
 
@@ -347,7 +344,6 @@ define('buttons', function() {
                         this.className = "checkButton fa fa-check";
                     }
                 };
-                return checkButton;
             }
         }
     };
