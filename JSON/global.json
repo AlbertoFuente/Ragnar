@@ -1,6 +1,5 @@
 {
     "basicButton": {
-        "buttonSize": "big",
         "backgroundColor": "rgb(255,255,255)",
         "borderColor": "rgb(0,153,255)",
         "borderSize": "1px",
@@ -31,7 +30,6 @@
         "innerShadowColor": "#3769d9"
     },
     "seriesButtons": {
-        "buttonSize": "big",
         "backgroundColor": "rgb(255,255,255)",
         "borderColor": "rgb(0,153,255)",
         "borderSize": "1px",
