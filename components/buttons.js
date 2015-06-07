@@ -55,7 +55,7 @@ define('buttons', function() {
                     basicButton.dropDownContainer = document.createElement('div');
                     basicButton.dropDownContainer.className = "dropDownContainer";
 
-                    setTimeout(function() {
+                    window.setTimeout(function() {
                         basicButton.parentPosition = basicButton.buttonBox.getBoundingClientRect();
                         basicButton.parentPositionLeft = basicButton.parentPosition.left;
                         basicButton.parentPositionTop = basicButton.parentPosition.top;
@@ -198,7 +198,7 @@ define('buttons', function() {
                         seriesButtons.dropDownContainerSeries = document.createElement('div');
                         seriesButtons.dropDownContainerSeries.className = "dropDownContainerSeriesButtons";
 
-                        setTimeout(function() {
+                        window.setTimeout(function() {
                             seriesButtons.parentPositionS = seriesButtons.divButton.getBoundingClientRect();
                             seriesButtons.parentPositionLeftS = seriesButtons.parentPositionS.left;
                             seriesButtons.parentPositionTopS = seriesButtons.parentPositionS.top;
@@ -347,4 +347,4 @@ define('buttons', function() {
             }
         }
     };
-}());
+});
