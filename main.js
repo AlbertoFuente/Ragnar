@@ -8,23 +8,6 @@ requirejs.config({
         'buttons': 'js/buttons',
         'components': 'js/components',
         'samples': 'examples/script/examples.js'
-    },
-    shim: {
-        'jquery': {
-            exports: 'jquery'
-        },
-        'services': {
-            exports: 'services'
-        },
-        'buttons': {
-            exports: 'buttons'
-        },
-        'components': {
-            exports: 'components'
-        },
-        'samples': {
-            exports: 'samples'
-        }
     }
 });
 
